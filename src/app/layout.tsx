@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -23,6 +24,7 @@ export default function RootLayout({
         className={`${rubik.variable} antialiased`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
