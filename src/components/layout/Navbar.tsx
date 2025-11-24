@@ -1,35 +1,188 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
-import { Menu } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
-export const Navbar = () => {
+interface NavbarProps {
+    variant?: 'light' | 'dark';
+}
+
+const servicesLinks = [
+    { href: '/servizi/marketplace', label: 'Marketplace' },
+    { href: '/servizi/e-commerce', label: 'E-commerce' },
+    { href: '/servizi/leads', label: 'Leads' },
+    { href: '/servizi/advertising', label: 'Advertising' },
+];
+
+export const Navbar = ({ variant = 'light' }: NavbarProps) => {
+    const isDark = variant === 'dark';
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+    const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    // Scroll detection
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // For dark variant pages, always show solid background
+    // For light variant pages, show transparent at top, dark when scrolled
+    const isTransparent = !isDark && !scrolled;
+    const navBgClass = isTransparent
+        ? 'bg-transparent border-transparent'
+        : 'bg-[#0B223A] border-b border-white/10 shadow-lg backdrop-blur-md';
+
+    // Text is always white for this design
+    const textColorClass = 'text-white';
+
     return (
-        <nav className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md">
+        <nav className={`fixed top-0 z-50 w-full transition-all duration-300 ${navBgClass}`}>
             <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-                <Link href="/" className="text-2xl font-bold text-[#0B223A]">
+                <Link href="/" className={`text-2xl font-bold ${textColorClass}`}>
                     Mela<span className="text-[#FFD700]">.</span>
                 </Link>
 
+                {/* Desktop Navigation */}
                 <div className="hidden items-center gap-8 md:flex">
-                    <Link href="/servizi" className="text-sm font-medium text-gray-600 transition-colors hover:text-[#0B223A]">
-                        Servizi
+                    <Link href="/" className={`text-sm font-medium transition-colors ${textColorClass} hover:text-[#FFD700]`}>
+                        Home
                     </Link>
-                    <Link href="/casistudio" className="text-sm font-medium text-gray-600 transition-colors hover:text-[#0B223A]">
+
+                    {/* Services Dropdown */}
+                    <div
+                        className="relative"
+                        onMouseEnter={() => setServicesDropdownOpen(true)}
+                        onMouseLeave={() => setServicesDropdownOpen(false)}
+                    >
+                        <button
+                            className={`flex items-center gap-1 text-sm font-medium transition-colors ${textColorClass} hover:text-[#FFD700]`}
+                        >
+                            Servizi
+                            <ChevronDown className={`h-4 w-4 transition-transform ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
+                        </button>
+
+                        {/* Dropdown Menu */}
+                        {servicesDropdownOpen && (
+                            <div className="absolute left-0 top-full mt-2 w-56 rounded-lg shadow-xl border bg-white border-gray-200">
+                                <div className="py-2">
+                                    {servicesLinks.map((service) => (
+                                        <Link
+                                            key={service.href}
+                                            href={service.href}
+                                            className="block px-4 py-2 text-sm transition-colors text-gray-700 hover:bg-gray-50 hover:text-[#0B223A]"
+                                        >
+                                            {service.label}
+                                        </Link>
+                                    ))}
+                                    <div className="mx-2 my-1 border-t border-gray-200" />
+                                    <Link
+                                        href="/servizi"
+                                        className="block px-4 py-2 text-sm font-medium transition-colors text-[#0B223A] hover:bg-gray-50"
+                                    >
+                                        Tutti i Servizi →
+                                    </Link>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    <Link href="/casistudio" className={`text-sm font-medium transition-colors ${textColorClass} hover:text-[#FFD700]`}>
                         Casi Studio
                     </Link>
-                    <Link href="/about" className="text-sm font-medium text-gray-600 transition-colors hover:text-[#0B223A]">
+                    <Link href="/about" className={`text-sm font-medium transition-colors ${textColorClass} hover:text-[#FFD700]`}>
                         About
                     </Link>
                     <Link href="/contatti">
-                        <Button size="default">Contattaci</Button>
+                        <Button size="default" className="bg-[#FFD700] text-[#0B223A] hover:bg-white">Contattaci</Button>
                     </Link>
                 </div>
 
-                <button className="md:hidden">
-                    <Menu className="h-6 w-6 text-[#0B223A]" />
+                {/* Mobile Menu Button */}
+                <button
+                    className="md:hidden"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle menu"
+                >
+                    {mobileMenuOpen ? (
+                        <X className={`h-6 w-6 ${textColorClass}`} />
+                    ) : (
+                        <Menu className={`h-6 w-6 ${textColorClass}`} />
+                    )}
                 </button>
             </div>
+
+            {/* Mobile Menu */}
+            {mobileMenuOpen && (
+                <div className="md:hidden border-t border-white/10 bg-[#0B223A]">
+                    <div className="container mx-auto px-4 py-4 space-y-2">
+                        <Link
+                            href="/"
+                            className="block py-2 text-sm font-medium text-gray-300 hover:text-white"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            Home
+                        </Link>
+
+                        {/* Mobile Services Accordion */}
+                        <div>
+                            <button
+                                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                                className="flex items-center justify-between w-full py-2 text-sm font-medium text-gray-300 hover:text-white"
+                            >
+                                Servizi
+                                <ChevronDown className={`h-4 w-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                            </button>
+                            {mobileServicesOpen && (
+                                <div className="pl-4 mt-1 space-y-1">
+                                    {servicesLinks.map((service) => (
+                                        <Link
+                                            key={service.href}
+                                            href={service.href}
+                                            className="block py-2 text-sm text-gray-400 hover:text-white"
+                                            onClick={() => setMobileMenuOpen(false)}
+                                        >
+                                            {service.label}
+                                        </Link>
+                                    ))}
+                                    <Link
+                                        href="/servizi"
+                                        className="block py-2 text-sm font-medium text-[#FFD700] hover:text-white"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Tutti i Servizi →
+                                    </Link>
+                                </div>
+                            )}
+                        </div>
+
+                        <Link
+                            href="/casistudio"
+                            className="block py-2 text-sm font-medium text-gray-300 hover:text-white"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            Casi Studio
+                        </Link>
+                        <Link
+                            href="/about"
+                            className="block py-2 text-sm font-medium text-gray-300 hover:text-white"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            About
+                        </Link>
+                        <Link href="/contatti" onClick={() => setMobileMenuOpen(false)}>
+                            <Button size="default" className="w-full mt-4 bg-[#FFD700] text-[#0B223A] hover:bg-white">Contattaci</Button>
+                        </Link>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };
