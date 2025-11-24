@@ -46,8 +46,12 @@ export const Navbar = ({ variant = 'light' }: NavbarProps) => {
     return (
         <nav className={`fixed top-0 z-50 w-full transition-all duration-300 ${navBgClass}`}>
             <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-                <Link href="/" className={`text-2xl font-bold ${textColorClass}`}>
-                    Mela<span className="text-[#FFD700]">.</span>
+                <Link href="/" className="flex items-center">
+                    <img
+                        src="https://mela.services/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/05/logo-mela-x2.png.webp"
+                        alt="Mela Services"
+                        className="h-8 w-auto"
+                    />
                 </Link>
 
                 {/* Desktop Navigation */}
@@ -71,24 +75,26 @@ export const Navbar = ({ variant = 'light' }: NavbarProps) => {
 
                         {/* Dropdown Menu */}
                         {servicesDropdownOpen && (
-                            <div className="absolute left-0 top-full mt-2 w-56 rounded-lg shadow-xl border bg-white border-gray-200">
-                                <div className="py-2">
-                                    {servicesLinks.map((service) => (
+                            <div className="absolute left-0 top-full w-56 pt-2">
+                                <div className="rounded-lg shadow-xl border bg-white border-gray-200">
+                                    <div className="py-2">
+                                        {servicesLinks.map((service) => (
+                                            <Link
+                                                key={service.href}
+                                                href={service.href}
+                                                className="block px-4 py-2 text-sm transition-colors text-gray-700 hover:bg-gray-50 hover:text-[#0B223A]"
+                                            >
+                                                {service.label}
+                                            </Link>
+                                        ))}
+                                        <div className="mx-2 my-1 border-t border-gray-200" />
                                         <Link
-                                            key={service.href}
-                                            href={service.href}
-                                            className="block px-4 py-2 text-sm transition-colors text-gray-700 hover:bg-gray-50 hover:text-[#0B223A]"
+                                            href="/servizi"
+                                            className="block px-4 py-2 text-sm font-medium transition-colors text-[#0B223A] hover:bg-gray-50"
                                         >
-                                            {service.label}
+                                            Tutti i Servizi →
                                         </Link>
-                                    ))}
-                                    <div className="mx-2 my-1 border-t border-gray-200" />
-                                    <Link
-                                        href="/servizi"
-                                        className="block px-4 py-2 text-sm font-medium transition-colors text-[#0B223A] hover:bg-gray-50"
-                                    >
-                                        Tutti i Servizi →
-                                    </Link>
+                                    </div>
                                 </div>
                             </div>
                         )}
