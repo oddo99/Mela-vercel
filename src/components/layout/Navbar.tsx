@@ -50,7 +50,7 @@ export const Navbar = ({ variant = 'light' }: NavbarProps) => {
                     <img
                         src="https://mela.services/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/05/logo-mela-x2.png.webp"
                         alt="Mela Services"
-                        className="h-8 w-auto"
+                        className="h-12 w-auto"
                     />
                 </Link>
 
