@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+import { Exo_2 } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
-const rubik = Rubik({
-  variable: "--font-rubik",
+const exo2 = Exo_2({
+  variable: "--font-exo-2",
   subsets: ["latin"],
 });
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="it" suppressHydrationWarning>
       <body
-        className={`${rubik.variable} antialiased`}
+        className={`${exo2.variable} antialiased`}
       >
         {children}
         <SpeedInsights />

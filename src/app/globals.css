@@ -13,7 +13,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
-  --font-rubik: var(--font-rubik);
+  --font-exo-2: var(--font-exo-2);
 
   --animate-fade-in: fade-in 0.5s ease-out forwards;
 
@@ -33,7 +33,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-rubik), sans-serif;
+  font-family: var(--font-exo-2), sans-serif;
 }
 
 @utility gradient-text {
