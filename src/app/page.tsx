@@ -284,7 +284,7 @@ export default function HomePage() {
                 { quote: "Un servizio eccezionale e una squadra dedicata. Non potremmo essere più felici!", author: "Paolo Dabbene" }
               ].map((testimonial, i) => (
                 <FadeIn key={i} delay={i * 0.1} className="p-8 rounded-3xl bg-gray-50 relative">
-                  <div className="text-6xl text-[#FFD700] font-serif absolute top-4 left-6">"</div>
+                  <div className="text-6xl text-[#FFD700] absolute top-4 left-6">"</div>
                   <p className="mb-6 text-lg text-gray-600 italic relative z-10 pt-6">{testimonial.quote}</p>
                   <div className="font-bold text-[#0B223A]">{testimonial.author}</div>
                 </FadeIn>
