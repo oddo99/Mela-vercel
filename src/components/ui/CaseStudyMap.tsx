@@ -22,7 +22,7 @@ const caseStudies: CaseStudy[] = [
         href: '/casistudio/grifos',
         tags: ['Amazon', 'International'],
         // USA - center of continental US
-        position: { left: '22%', top: '52%' }
+        position: { left: '26%', top: '53%' }
     },
     {
         id: 'formularity',
@@ -31,7 +31,7 @@ const caseStudies: CaseStudy[] = [
         href: '/casistudio/formularity',
         tags: ['E-commerce', 'UK Market'],
         // UK - British Isles, northwest of France
-        position: { left: '60%', top: '35%' }
+        position: { left: '66%', top: '53%' }
     },
     {
         id: 'life120',
@@ -40,7 +40,7 @@ const caseStudies: CaseStudy[] = [
         href: '/casistudio/life120',
         tags: ['E-commerce', 'Strategy'],
         // Germany - center-north of Europe, east of France
-        position: { left: '68%', top: '40%' }
+        position: { left: '76%', top: '58%' }
     },
     {
         id: 'pegasium',
@@ -49,7 +49,7 @@ const caseStudies: CaseStudy[] = [
         href: '/casistudio/pegasium',
         tags: ['Marketplace', 'France'],
         // France - west-central Europe
-        position: { left: '62%', top: '48%' }
+        position: { left: '69%', top: '69%' }
     },
     {
         id: 'dermomamma',
@@ -58,7 +58,7 @@ const caseStudies: CaseStudy[] = [
         href: '/casistudio/dermomamma',
         tags: ['Marketplace', 'Healthcare'],
         // Spain - Iberian Peninsula, southwest Europe
-        position: { left: '58%', top: '58%' }
+        position: { left: '64%', top: '85%' }
     },
     {
         id: 'valentiargenti',
@@ -67,7 +67,7 @@ const caseStudies: CaseStudy[] = [
         href: '/casistudio/valentiargenti',
         tags: ['Amazon', 'Made in Italy'],
         // Italy - boot-shaped peninsula, south of Germany
-        position: { left: '70%', top: '55%' }
+        position: { left: '78%', top: '79%' }
     }
 ];
 
@@ -82,11 +82,11 @@ export const CaseStudyMap = () => {
                 onMouseLeave={() => setActivePin(null)}
             >
                 {/* World Map Background */}
-                <div className="absolute inset-0 rounded-2xl overflow-hidden bg-white">
+                <div className="absolute inset-0 rounded-2xl overflow-hidden bg-gray-50">
                     <img
                         src="/images/world-map.png"
                         alt="World Map"
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-cover contrast-125 opacity-90"
                     />
                 </div>
 
