@@ -77,7 +77,7 @@ export const PartnersSlider = () => {
                         {partners.map((partner, index) => (
                             <div
                                 key={`set1-${index}`}
-                                className="flex h-32 w-48 flex-shrink-0 items-center justify-center"
+                                className="flex h-32 w-48 flex-shrink-0 items-center justify-center self-center"
                             >
                                 <img
                                     src={partner.url}
@@ -93,7 +93,7 @@ export const PartnersSlider = () => {
                         {partners.map((partner, index) => (
                             <div
                                 key={`set2-${index}`}
-                                className="flex h-32 w-48 flex-shrink-0 items-center justify-center"
+                                className="flex h-32 w-48 flex-shrink-0 items-center justify-center self-center"
                             >
                                 <img
                                     src={partner.url}
