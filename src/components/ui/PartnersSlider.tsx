@@ -61,7 +61,7 @@ export const PartnersSlider = () => {
                     I Nostri Marketplace
                 </h2>
                 <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-gray-600">
-                    Collaboriamo con i migliori brand per garantire risultati eccezionali
+                    Vendiamo sui principali canali e-commerce del mondo
                 </p>
             </div>
 
@@ -71,7 +71,7 @@ export const PartnersSlider = () => {
                 <div className="absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-white to-transparent" />
 
                 {/* Scrolling container */}
-                <div className="flex w-full">
+                <div className="flex w-full items-center">
                     {/* First set of logos */}
                     <div className="flex animate-scroll-infinite gap-16 px-8">
                         {partners.map((partner, index) => (
