@@ -1,11 +1,60 @@
-import React from "react";
+'use client';
+
+import React, { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function ContactPage() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+    });
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('loading');
+        setErrorMessage('');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Errore durante l\'invio');
+            }
+
+            setStatus('success');
+            setFormData({ name: '', email: '', phone: '', message: '' });
+
+            // Reset success message after 5 seconds
+            setTimeout(() => setStatus('idle'), 5000);
+        } catch (error) {
+            setStatus('error');
+            setErrorMessage(error instanceof Error ? error.message : 'Errore durante l\'invio del messaggio');
+        }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData(prev => ({
+            ...prev,
+            [e.target.name]: e.target.value
+        }));
+    };
+
     return (
         <div className="min-h-screen bg-white">
             <Navbar />
@@ -104,7 +153,24 @@ export default function ContactPage() {
                             {/* Contact Form */}
                             <div className="glass-card rounded-3xl border border-gray-100 p-8 shadow-xl">
                                 <h2 className="mb-6 text-2xl font-bold text-gray-900">Invia un messaggio</h2>
-                                <form className="space-y-6">
+
+                                {/* Success Message */}
+                                {status === 'success' && (
+                                    <div className="mb-6 flex items-center gap-3 rounded-lg bg-green-50 p-4 text-green-800">
+                                        <CheckCircle className="h-5 w-5 flex-shrink-0" />
+                                        <p className="text-sm font-medium">Messaggio inviato con successo! Ti risponderemo presto.</p>
+                                    </div>
+                                )}
+
+                                {/* Error Message */}
+                                {status === 'error' && (
+                                    <div className="mb-6 flex items-center gap-3 rounded-lg bg-red-50 p-4 text-red-800">
+                                        <AlertCircle className="h-5 w-5 flex-shrink-0" />
+                                        <p className="text-sm font-medium">{errorMessage}</p>
+                                    </div>
+                                )}
+
+                                <form onSubmit={handleSubmit} className="space-y-6">
                                     <div>
                                         <label htmlFor="name" className="mb-2 block text-sm font-medium text-gray-700">
                                             Nome *
@@ -113,8 +179,11 @@ export default function ContactPage() {
                                             type="text"
                                             id="name"
                                             name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
                                             required
-                                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                            disabled={status === 'loading'}
+                                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:bg-gray-50 disabled:cursor-not-allowed"
                                         />
                                     </div>
 
@@ -126,8 +195,11 @@ export default function ContactPage() {
                                             type="email"
                                             id="email"
                                             name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
                                             required
-                                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                            disabled={status === 'loading'}
+                                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:bg-gray-50 disabled:cursor-not-allowed"
                                         />
                                     </div>
 
@@ -139,7 +211,10 @@ export default function ContactPage() {
                                             type="tel"
                                             id="phone"
                                             name="phone"
-                                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            disabled={status === 'loading'}
+                                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:bg-gray-50 disabled:cursor-not-allowed"
                                         />
                                     </div>
 
@@ -151,13 +226,21 @@ export default function ContactPage() {
                                             id="message"
                                             name="message"
                                             rows={6}
+                                            value={formData.message}
+                                            onChange={handleChange}
                                             required
-                                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                            disabled={status === 'loading'}
+                                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:bg-gray-50 disabled:cursor-not-allowed"
                                         />
                                     </div>
 
-                                    <Button type="submit" size="lg" className="w-full rounded-full">
-                                        Invia messaggio
+                                    <Button
+                                        type="submit"
+                                        size="lg"
+                                        className="w-full rounded-full"
+                                        disabled={status === 'loading'}
+                                    >
+                                        {status === 'loading' ? 'Invio in corso...' : 'Invia messaggio'}
                                     </Button>
                                 </form>
                             </div>
