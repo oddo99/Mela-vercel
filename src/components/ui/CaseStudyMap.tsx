@@ -13,6 +13,7 @@ interface CaseStudy {
     position: { left: string; top: string };
 }
 
+// Pin positions adjusted for focused NA + Europe map
 const caseStudies: CaseStudy[] = [
     {
         id: 'grifos',
@@ -20,7 +21,7 @@ const caseStudies: CaseStudy[] = [
         country: 'USA',
         href: '/casistudio/grifos',
         tags: ['Amazon', 'International'],
-        position: { left: '18%', top: '42%' }
+        position: { left: '25%', top: '45%' }
     },
     {
         id: 'formularity',
@@ -28,7 +29,7 @@ const caseStudies: CaseStudy[] = [
         country: 'UK',
         href: '/casistudio/formularity',
         tags: ['E-commerce', 'UK Market'],
-        position: { left: '46%', top: '28%' }
+        position: { left: '68%', top: '32%' }
     },
     {
         id: 'pegasium',
@@ -36,7 +37,7 @@ const caseStudies: CaseStudy[] = [
         country: 'Francia',
         href: '/casistudio/pegasium',
         tags: ['Marketplace', 'France'],
-        position: { left: '47%', top: '35%' }
+        position: { left: '70%', top: '42%' }
     },
     {
         id: 'life120',
@@ -44,7 +45,7 @@ const caseStudies: CaseStudy[] = [
         country: 'Germania',
         href: '/casistudio/life120',
         tags: ['E-commerce', 'Strategy'],
-        position: { left: '50%', top: '30%' }
+        position: { left: '75%', top: '35%' }
     },
     {
         id: 'valentiargenti',
@@ -52,7 +53,7 @@ const caseStudies: CaseStudy[] = [
         country: 'Italia',
         href: '/casistudio/valentiargenti',
         tags: ['Amazon', 'Made in Italy'],
-        position: { left: '51%', top: '38%' }
+        position: { left: '77%', top: '48%' }
     },
     {
         id: 'dermomamma',
@@ -60,35 +61,26 @@ const caseStudies: CaseStudy[] = [
         country: 'Spagna',
         href: '/casistudio/dermomamma',
         tags: ['Marketplace', 'Healthcare'],
-        position: { left: '44%', top: '40%' }
+        position: { left: '65%', top: '52%' }
     }
 ];
 
 export const CaseStudyMap = () => {
     const [activePin, setActivePin] = useState<string | null>(null);
 
-    // Keep card visible when hovering over it
-    const handleCardMouseEnter = () => {
-        // Don't clear activePin when entering the card
-    };
-
-    const handleCardMouseLeave = () => {
-        setActivePin(null);
-    };
-
     return (
         <div className="w-full">
-            {/* Map Container */}
+            {/* Map Container - Hidden on mobile, show list instead */}
             <div
-                className="relative w-full aspect-[2/1] max-w-6xl mx-auto"
+                className="relative w-full aspect-[2/1] max-w-5xl mx-auto hidden md:block"
                 onMouseLeave={() => setActivePin(null)}
             >
                 {/* World Map Background */}
-                <div className="absolute inset-0 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                <div className="absolute inset-0 rounded-2xl overflow-hidden bg-white">
                     <img
                         src="/images/world-map.png"
                         alt="World Map"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                     />
                 </div>
 
@@ -107,10 +99,10 @@ export const CaseStudyMap = () => {
                             <div className="absolute inset-0 -m-1 rounded-full bg-[#8B5CF6]/50 animate-pulse" />
 
                             {/* Pin marker */}
-                            <div className="relative w-6 h-6 rounded-full bg-[#8B5CF6] border-2 border-white shadow-lg 
+                            <div className="relative w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#8B5CF6] border-2 border-white shadow-lg 
                             flex items-center justify-center cursor-pointer
                             group-hover:bg-[#FFD700] group-hover:scale-125 transition-all duration-300">
-                                <div className="w-2 h-2 rounded-full bg-white" />
+                                <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white" />
                             </div>
 
                             {/* Tooltip Label */}
@@ -127,14 +119,14 @@ export const CaseStudyMap = () => {
                     </div>
                 ))}
 
-                {/* Active Case Study Card - Stays visible when hovering */}
+                {/* Active Case Study Card */}
                 {activePin && (
                     <div
                         className="absolute right-4 top-4 w-72 bg-white rounded-xl shadow-2xl 
                       border border-gray-100 overflow-hidden z-20
                       animate-fade-in"
-                        onMouseEnter={handleCardMouseEnter}
-                        onMouseLeave={handleCardMouseLeave}
+                        onMouseEnter={() => { }}
+                        onMouseLeave={() => setActivePin(null)}
                     >
                         {caseStudies.filter(s => s.id === activePin).map(study => (
                             <Link href={study.href} key={study.id} className="block group">
@@ -163,8 +155,8 @@ export const CaseStudyMap = () => {
                 )}
             </div>
 
-            {/* Mobile: List of Case Studies */}
-            <div className="md:hidden mt-8 grid gap-4">
+            {/* Mobile: List of Case Studies (always visible on mobile) */}
+            <div className="md:hidden grid gap-4">
                 {caseStudies.map((study) => (
                     <Link
                         key={study.id}
