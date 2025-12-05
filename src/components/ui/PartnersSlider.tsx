@@ -58,7 +58,7 @@ export const PartnersSlider = () => {
         <div className="w-full overflow-hidden bg-white py-16">
             <div className="container mx-auto mb-12">
                 <h2 className="text-center text-4xl font-bold text-[#0B223A] md:text-5xl">
-                    I Nostri Partner
+                    I Nostri Marketplace
                 </h2>
                 <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-gray-600">
                     Collaboriamo con i migliori brand per garantire risultati eccezionali
@@ -77,7 +77,7 @@ export const PartnersSlider = () => {
                         {partners.map((partner, index) => (
                             <div
                                 key={`set1-${index}`}
-                                className="flex h-24 w-40 flex-shrink-0 items-center justify-center grayscale transition-all duration-300 hover:grayscale-0"
+                                className="flex h-32 w-48 flex-shrink-0 items-center justify-center"
                             >
                                 <img
                                     src={partner.url}
@@ -93,7 +93,7 @@ export const PartnersSlider = () => {
                         {partners.map((partner, index) => (
                             <div
                                 key={`set2-${index}`}
-                                className="flex h-24 w-40 flex-shrink-0 items-center justify-center grayscale transition-all duration-300 hover:grayscale-0"
+                                className="flex h-32 w-48 flex-shrink-0 items-center justify-center"
                             >
                                 <img
                                     src={partner.url}
