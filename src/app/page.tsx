@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/Card";
 import { Marquee } from "@/components/ui/Marquee";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PartnersSlider } from "@/components/ui/PartnersSlider";
+import { CertificationsSlider } from "@/components/ui/CertificationsSlider";
 import {
   ShoppingCart,
   Globe,
@@ -296,6 +297,9 @@ export default function HomePage() {
             </div>
           </div>
         </Section>
+
+        {/* Certifications Slider Section */}
+        <CertificationsSlider />
 
         {/* Mega Footer CTA */}
         <Section className="bg-[#0B223A] py-24 text-center text-white">
