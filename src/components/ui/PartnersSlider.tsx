@@ -73,7 +73,7 @@ export const PartnersSlider = () => {
                 {/* Scrolling container */}
                 <div className="flex w-full items-center">
                     {/* First set of logos */}
-                    <div className="flex animate-scroll-infinite gap-16 px-8">
+                    <div className="flex animate-scroll-infinite gap-16 px-8 items-center">
                         {partners.map((partner, index) => (
                             <div
                                 key={`set1-${index}`}
@@ -89,7 +89,7 @@ export const PartnersSlider = () => {
                     </div>
 
                     {/* Duplicate set for seamless loop */}
-                    <div className="flex animate-scroll-infinite gap-16 px-8">
+                    <div className="flex animate-scroll-infinite gap-16 px-8 items-center">
                         {partners.map((partner, index) => (
                             <div
                                 key={`set2-${index}`}
