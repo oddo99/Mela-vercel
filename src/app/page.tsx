@@ -188,6 +188,9 @@ export default function HomePage() {
           </div>
         </Section>
 
+        {/* Certifications Slider Section */}
+        <CertificationsSlider />
+
         {/* Technology Section */}
         <Section className="bg-[#0B223A] py-24 text-white">
           <div className="container">
@@ -298,8 +301,6 @@ export default function HomePage() {
           </div>
         </Section>
 
-        {/* Certifications Slider Section */}
-        <CertificationsSlider />
 
         {/* Mega Footer CTA */}
         <Section className="bg-[#0B223A] py-24 text-center text-white">
