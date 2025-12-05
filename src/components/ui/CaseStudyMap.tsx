@@ -74,7 +74,7 @@ export const CaseStudyMap = () => {
                 {/* World Map SVG Background */}
                 <div className="absolute inset-0 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                     <img
-                        src="https://staging.mela.services/wp-content/uploads/2024/04/mappa.png"
+                        src="/images/world-map.png"
                         alt="World Map"
                         className="w-full h-full object-cover"
                     />
