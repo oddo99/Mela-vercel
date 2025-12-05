@@ -9,6 +9,7 @@ import { Marquee } from "@/components/ui/Marquee";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PartnersSlider } from "@/components/ui/PartnersSlider";
 import { CertificationsSlider } from "@/components/ui/CertificationsSlider";
+import { CaseStudyMap } from "@/components/ui/CaseStudyMap";
 import {
   ShoppingCart,
   Globe,
@@ -218,64 +219,18 @@ export default function HomePage() {
           </div>
         </Section>
 
-        {/* Case Studies Section */}
+        {/* Case Studies Map Section */}
         <Section className="bg-gray-50 py-24">
           <div className="container">
             <FadeIn className="mb-16 text-center">
               <h2 className="mb-6 text-4xl font-bold text-[#0B223A] md:text-6xl">Casi Studio</h2>
+              <p className="mx-auto max-w-2xl text-xl text-gray-600">
+                I nostri clienti nel mondo. Clicca su un pin per scoprire il caso studio.
+              </p>
             </FadeIn>
-            <div className="grid gap-8 md:grid-cols-3">
-              {[
-                {
-                  title: "Farmacia 724",
-                  tags: ["Amazon", "eBay", "Google Ads"],
-                  image: "/images/generated/pharma-growth.png",
-                  href: "/casistudio/farmacia724"
-                },
-                {
-                  title: "Life 120",
-                  tags: ["E-commerce", "Meta Ads", "Strategy"],
-                  image: "/images/generated/supplements.png",
-                  href: "/casistudio/life120"
-                },
-                {
-                  title: "Damco",
-                  tags: ["Marketplace", "International", "B2B"],
-                  image: "/images/generated/logistics.png",
-                  href: "/casistudio/damco"
-                }
-              ].map((study, i) => (
-                <FadeIn key={i} delay={i * 0.2}>
-                  <Link href={study.href} className="group h-full block">
-                    <Card className="overflow-hidden h-full hover:shadow-xl transition-all duration-300 border-none">
-                      <div className="h-64 relative overflow-hidden">
-                        <img
-                          src={study.image}
-                          alt={study.title}
-                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-[#0B223A]/40 group-hover:bg-[#0B223A]/20 transition-colors" />
-                        <div className="absolute bottom-0 left-0 p-6">
-                          <span className="text-3xl font-black text-white uppercase drop-shadow-md">{study.title}</span>
-                        </div>
-                      </div>
-                      <div className="p-8 bg-white">
-                        <div className="flex flex-wrap gap-2 mb-6">
-                          {study.tags.map((tag, t) => (
-                            <span key={t} className="px-3 py-1 rounded-full bg-gray-100 text-sm font-medium text-gray-600">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        <span className="text-[#0B223A] font-bold group-hover:text-[#FFD700] transition-colors flex items-center">
-                          Leggi il Case Study <ArrowRight className="ml-2 h-4 w-4" />
-                        </span>
-                      </div>
-                    </Card>
-                  </Link>
-                </FadeIn>
-              ))}
-            </div>
+            <FadeIn delay={0.2}>
+              <CaseStudyMap />
+            </FadeIn>
           </div>
         </Section>
 
