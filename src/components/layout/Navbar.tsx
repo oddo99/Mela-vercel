@@ -3,17 +3,33 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ArrowRight, Sparkles } from 'lucide-react';
 
 interface NavbarProps {
     variant?: 'light' | 'dark';
 }
 
 const servicesLinks = [
-    { href: '/servizi/marketplace', label: 'Marketplace' },
-    { href: '/servizi/e-commerce', label: 'E-commerce' },
-    { href: '/servizi/leads', label: 'Leads' },
-    { href: '/servizi/advertising', label: 'Advertising' },
+    {
+        href: '/servizi/marketplace',
+        label: 'Marketplace',
+        description: 'Vendi su Amazon, eBay e altri marketplace'
+    },
+    {
+        href: '/servizi/e-commerce',
+        label: 'E-commerce',
+        description: 'Crea il tuo negozio online su misura'
+    },
+    {
+        href: '/servizi/leads',
+        label: 'Lead Generation',
+        description: 'Acquisisci nuovi clienti qualificati'
+    },
+    {
+        href: '/servizi/advertising',
+        label: 'Advertising',
+        description: 'Campagne pubblicitarie performanti'
+    },
 ];
 
 export const Navbar = ({ variant = 'light' }: NavbarProps) => {
@@ -26,7 +42,7 @@ export const Navbar = ({ variant = 'light' }: NavbarProps) => {
     // Scroll detection
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            setScrolled(window.scrollY > 20);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -34,161 +50,219 @@ export const Navbar = ({ variant = 'light' }: NavbarProps) => {
     }, []);
 
     // For dark variant pages, always show solid background
-    // For light variant pages, show transparent at top, dark when scrolled
+    // For light variant pages, show transparent at top, solid when scrolled
     const isTransparent = !isDark && !scrolled;
-    const navBgClass = isTransparent
-        ? 'bg-transparent border-transparent'
-        : 'bg-[#0B223A] border-b border-white/10 shadow-lg backdrop-blur-md';
 
-    // Text is always white for this design
-    const textColorClass = 'text-white';
+    const navBgClass = isTransparent
+        ? 'bg-transparent'
+        : 'bg-[#0a1628]/95 backdrop-blur-xl border-b border-white/5';
 
     return (
-        <nav className={`fixed top-0 z-50 w-full transition-all duration-300 ${navBgClass}`}>
-            <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-                <Link href="/" className="flex items-center">
-                    <img
-                        src="https://mela.services/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/05/logo-mela-x2.png.webp"
-                        alt="Mela Services"
-                        className="h-12 w-auto"
-                    />
+        <nav className={`fixed top-0 z-50 w-full transition-all duration-500 ease-out ${navBgClass}`}>
+            {/* Gradient line at top when scrolled */}
+            <div className={`absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#FFD700]/50 to-transparent transition-opacity duration-300 ${scrolled ? 'opacity-100' : 'opacity-0'}`} />
+
+            <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-8">
+                {/* Logo */}
+                <Link href="/" className="flex items-center gap-3 group">
+                    <div className="relative">
+                        <img
+                            src="https://mela.services/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/05/logo-mela-x2.png.webp"
+                            alt="Mela Services"
+                            className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+                        />
+                        {/* Glow effect on hover */}
+                        <div className="absolute inset-0 -z-10 bg-[#FFD700]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <div className="hidden items-center gap-8 md:flex">
-                    <Link href="/" className={`text-sm font-medium transition-colors ${textColorClass} hover:text-[#FFD700]`}>
+                <div className="hidden items-center gap-1 md:flex">
+                    <Link
+                        href="/"
+                        className="relative px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-all duration-300 group"
+                    >
                         Home
+                        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#FFD700] to-[#FFA500] group-hover:w-3/4 transition-all duration-300" />
                     </Link>
 
-                    {/* Services Dropdown */}
+                    {/* Services Mega Dropdown */}
                     <div
                         className="relative"
                         onMouseEnter={() => setServicesDropdownOpen(true)}
                         onMouseLeave={() => setServicesDropdownOpen(false)}
                     >
                         <button
-                            className={`flex items-center gap-1 text-sm font-medium transition-colors ${textColorClass} hover:text-[#FFD700]`}
+                            className="relative flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-all duration-300 group"
                         >
                             Servizi
-                            <ChevronDown className={`h-4 w-4 transition-transform ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
+                            <ChevronDown className={`h-4 w-4 transition-all duration-300 ${servicesDropdownOpen ? 'rotate-180 text-[#FFD700]' : ''}`} />
+                            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#FFD700] to-[#FFA500] group-hover:w-3/4 transition-all duration-300" />
                         </button>
 
-                        {/* Dropdown Menu */}
-                        {servicesDropdownOpen && (
-                            <div className="absolute left-0 top-full w-56 pt-2">
-                                <div className="rounded-lg shadow-xl border bg-white border-gray-200">
-                                    <div className="py-2">
+                        {/* Mega Dropdown Menu */}
+                        <div className={`absolute left-1/2 -translate-x-1/2 top-full pt-4 transition-all duration-300 ${servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                            <div className="relative w-[480px] rounded-2xl p-1 bg-gradient-to-b from-white/10 to-white/5">
+                                {/* Inner container with glass effect */}
+                                <div className="rounded-xl bg-[#0a1628]/95 backdrop-blur-xl p-4 shadow-2xl">
+                                    {/* Header */}
+                                    <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
+                                        <Sparkles className="h-4 w-4 text-[#FFD700]" />
+                                        <span className="text-xs font-semibold text-white/60 uppercase tracking-wider">I Nostri Servizi</span>
+                                    </div>
+
+                                    {/* Services Grid */}
+                                    <div className="grid grid-cols-2 gap-2">
                                         {servicesLinks.map((service) => (
                                             <Link
                                                 key={service.href}
                                                 href={service.href}
-                                                className="block px-4 py-2 text-sm transition-colors text-gray-700 hover:bg-gray-50 hover:text-[#0B223A]"
+                                                className="group/item flex flex-col gap-1 p-3 rounded-lg hover:bg-white/5 transition-all duration-200"
                                             >
-                                                {service.label}
+                                                <span className="text-sm font-semibold text-white group-hover/item:text-[#FFD700] transition-colors duration-200">
+                                                    {service.label}
+                                                </span>
+                                                <span className="text-xs text-white/50 group-hover/item:text-white/70 transition-colors duration-200">
+                                                    {service.description}
+                                                </span>
                                             </Link>
                                         ))}
-                                        <div className="mx-2 my-1 border-t border-gray-200" />
-                                        <Link
-                                            href="/servizi"
-                                            className="block px-4 py-2 text-sm font-medium transition-colors text-[#0B223A] hover:bg-gray-50"
-                                        >
-                                            Tutti i Servizi →
-                                        </Link>
                                     </div>
+
+                                    {/* Footer CTA */}
+                                    <Link
+                                        href="/servizi"
+                                        className="group/link flex items-center justify-between mt-4 pt-3 border-t border-white/10"
+                                    >
+                                        <span className="text-sm font-medium text-[#FFD700]">Scopri tutti i servizi</span>
+                                        <ArrowRight className="h-4 w-4 text-[#FFD700] group-hover/link:translate-x-1 transition-transform duration-200" />
+                                    </Link>
                                 </div>
                             </div>
-                        )}
+                        </div>
                     </div>
 
-                    <Link href="/casistudio" className={`text-sm font-medium transition-colors ${textColorClass} hover:text-[#FFD700]`}>
+                    <Link
+                        href="/casistudio"
+                        className="relative px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-all duration-300 group"
+                    >
                         Casi Studio
+                        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#FFD700] to-[#FFA500] group-hover:w-3/4 transition-all duration-300" />
                     </Link>
-                    <Link href="/about" className={`text-sm font-medium transition-colors ${textColorClass} hover:text-[#FFD700]`}>
-                        About
+
+                    <Link
+                        href="/about"
+                        className="relative px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-all duration-300 group"
+                    >
+                        Chi Siamo
+                        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#FFD700] to-[#FFA500] group-hover:w-3/4 transition-all duration-300" />
                     </Link>
-                    <Link href="/contatti">
-                        <Button size="default" className="bg-[#FFD700] text-[#0B223A] hover:bg-white">Contattaci</Button>
+
+                    {/* CTA Button */}
+                    <Link href="/contatti" className="ml-4">
+                        <button className="relative group/btn px-6 py-2.5 rounded-full font-semibold text-sm overflow-hidden">
+                            {/* Gradient background */}
+                            <span className="absolute inset-0 bg-gradient-to-r from-[#FFD700] to-[#FFA500] transition-transform duration-300 group-hover/btn:scale-105" />
+                            {/* Shine effect */}
+                            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
+                            {/* Text */}
+                            <span className="relative text-[#0a1628] font-bold">Parla con noi</span>
+                        </button>
                     </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden"
+                    className="md:hidden relative p-2 rounded-lg hover:bg-white/5 transition-colors duration-200"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     aria-label="Toggle menu"
                 >
-                    {mobileMenuOpen ? (
-                        <X className={`h-6 w-6 ${textColorClass}`} />
-                    ) : (
-                        <Menu className={`h-6 w-6 ${textColorClass}`} />
-                    )}
+                    <div className="relative w-6 h-6">
+                        <Menu className={`absolute inset-0 h-6 w-6 text-white transition-all duration-300 ${mobileMenuOpen ? 'opacity-0 rotate-90 scale-50' : 'opacity-100 rotate-0 scale-100'}`} />
+                        <X className={`absolute inset-0 h-6 w-6 text-white transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-50'}`} />
+                    </div>
                 </button>
             </div>
 
             {/* Mobile Menu */}
-            {mobileMenuOpen && (
-                <div className="md:hidden border-t border-white/10 bg-[#0B223A]">
-                    <div className="container mx-auto px-4 py-4 space-y-2">
+            <div className={`md:hidden overflow-hidden transition-all duration-500 ease-out ${mobileMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className="bg-[#0a1628]/98 backdrop-blur-xl border-t border-white/5">
+                    <div className="container mx-auto px-4 py-6 space-y-2">
                         <Link
                             href="/"
-                            className="block py-2 text-sm font-medium text-gray-300 hover:text-white"
+                            className="block py-3 px-4 rounded-lg text-base font-medium text-white/80 hover:text-white hover:bg-white/5 transition-all duration-200"
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             Home
                         </Link>
 
                         {/* Mobile Services Accordion */}
-                        <div>
+                        <div className="rounded-lg overflow-hidden">
                             <button
                                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                                className="flex items-center justify-between w-full py-2 text-sm font-medium text-gray-300 hover:text-white"
+                                className="flex items-center justify-between w-full py-3 px-4 text-base font-medium text-white/80 hover:text-white hover:bg-white/5 transition-all duration-200"
                             >
-                                Servizi
-                                <ChevronDown className={`h-4 w-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                                <span>Servizi</span>
+                                <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180 text-[#FFD700]' : ''}`} />
                             </button>
-                            {mobileServicesOpen && (
-                                <div className="pl-4 mt-1 space-y-1">
+                            <div className={`overflow-hidden transition-all duration-300 ${mobileServicesOpen ? 'max-h-[400px]' : 'max-h-0'}`}>
+                                <div className="pl-4 pr-2 py-2 space-y-1 bg-white/5 rounded-b-lg mx-2">
                                     {servicesLinks.map((service) => (
                                         <Link
                                             key={service.href}
                                             href={service.href}
-                                            className="block py-2 text-sm text-gray-400 hover:text-white"
+                                            className="block py-2.5 px-3 rounded-md text-sm text-white/70 hover:text-white hover:bg-white/5 transition-all duration-200"
                                             onClick={() => setMobileMenuOpen(false)}
                                         >
-                                            {service.label}
+                                            <span className="font-medium">{service.label}</span>
+                                            <span className="block text-xs text-white/40 mt-0.5">{service.description}</span>
                                         </Link>
                                     ))}
                                     <Link
                                         href="/servizi"
-                                        className="block py-2 text-sm font-medium text-[#FFD700] hover:text-white"
+                                        className="flex items-center gap-2 py-2.5 px-3 text-sm font-semibold text-[#FFD700]"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
-                                        Tutti i Servizi →
+                                        Tutti i Servizi
+                                        <ArrowRight className="h-4 w-4" />
                                     </Link>
                                 </div>
-                            )}
+                            </div>
                         </div>
 
                         <Link
                             href="/casistudio"
-                            className="block py-2 text-sm font-medium text-gray-300 hover:text-white"
+                            className="block py-3 px-4 rounded-lg text-base font-medium text-white/80 hover:text-white hover:bg-white/5 transition-all duration-200"
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             Casi Studio
                         </Link>
                         <Link
                             href="/about"
-                            className="block py-2 text-sm font-medium text-gray-300 hover:text-white"
+                            className="block py-3 px-4 rounded-lg text-base font-medium text-white/80 hover:text-white hover:bg-white/5 transition-all duration-200"
                             onClick={() => setMobileMenuOpen(false)}
                         >
-                            About
+                            Chi Siamo
                         </Link>
-                        <Link href="/contatti" onClick={() => setMobileMenuOpen(false)}>
-                            <Button size="default" className="w-full mt-4 bg-[#FFD700] text-[#0B223A] hover:bg-white">Contattaci</Button>
-                        </Link>
+
+                        {/* Mobile CTA */}
+                        <div className="pt-4">
+                            <Link href="/contatti" onClick={() => setMobileMenuOpen(false)}>
+                                <button className="w-full py-4 rounded-xl font-bold text-base bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-[#0a1628] hover:shadow-lg hover:shadow-[#FFD700]/20 transition-all duration-300">
+                                    Parla con noi
+                                </button>
+                            </Link>
+                        </div>
+
+                        {/* Contact info */}
+                        <div className="pt-4 mt-4 border-t border-white/10">
+                            <p className="text-xs text-white/40 text-center">
+                                📧 info@mela.services • 📞 +39 XXX XXX XXXX
+                            </p>
+                        </div>
                     </div>
                 </div>
-            )}
+            </div>
         </nav>
     );
 };

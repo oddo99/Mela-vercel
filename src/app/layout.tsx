@@ -23,6 +23,7 @@ export default function RootLayout({
     <html lang="it" suppressHydrationWarning>
       <body
         className={`${exo2.variable} antialiased`}
+        suppressHydrationWarning
       >
         {children}
         <SpeedInsights />
