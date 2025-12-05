@@ -100,9 +100,14 @@ export const Navbar = ({ variant = 'light' }: NavbarProps) => {
                             <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#FFD700] to-[#FFA500] group-hover:w-3/4 transition-all duration-300" />
                         </button>
 
+                        {/* Bridge to prevent closing when moving from button to menu */}
+                        {servicesDropdownOpen && (
+                            <div className="absolute top-full left-0 w-full h-6 bg-transparent" />
+                        )}
+
                         {/* Mega Dropdown Menu */}
-                        <div className={`absolute left-1/2 -translate-x-1/2 top-full pt-4 transition-all duration-300 ${servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
-                            <div className="relative w-[480px] rounded-2xl p-1 bg-gradient-to-b from-white/10 to-white/5">
+                        <div className={`absolute left-1/2 -translate-x-1/2 top-full pt-4 transition-all duration-300 pointer-events-none ${servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                            <div className="relative w-[480px] rounded-2xl p-1 bg-gradient-to-b from-white/10 to-white/5 pointer-events-auto">
                                 {/* Inner container with glass effect */}
                                 <div className="rounded-xl bg-[#0a1628]/95 backdrop-blur-xl p-4 shadow-2xl">
                                     {/* Header */}
