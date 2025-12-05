@@ -13,7 +13,7 @@ interface CaseStudy {
     position: { left: string; top: string };
 }
 
-// Pin positions adjusted for focused NA + Europe map
+// Pin positions calibrated individually for each country on NA+Europe map
 const caseStudies: CaseStudy[] = [
     {
         id: 'grifos',
@@ -21,7 +21,8 @@ const caseStudies: CaseStudy[] = [
         country: 'USA',
         href: '/casistudio/grifos',
         tags: ['Amazon', 'International'],
-        position: { left: '25%', top: '45%' }
+        // USA - center of continental US
+        position: { left: '22%', top: '52%' }
     },
     {
         id: 'formularity',
@@ -29,15 +30,8 @@ const caseStudies: CaseStudy[] = [
         country: 'UK',
         href: '/casistudio/formularity',
         tags: ['E-commerce', 'UK Market'],
-        position: { left: '68%', top: '32%' }
-    },
-    {
-        id: 'pegasium',
-        name: 'Pegasium',
-        country: 'Francia',
-        href: '/casistudio/pegasium',
-        tags: ['Marketplace', 'France'],
-        position: { left: '70%', top: '42%' }
+        // UK - British Isles, northwest of France
+        position: { left: '60%', top: '35%' }
     },
     {
         id: 'life120',
@@ -45,15 +39,17 @@ const caseStudies: CaseStudy[] = [
         country: 'Germania',
         href: '/casistudio/life120',
         tags: ['E-commerce', 'Strategy'],
-        position: { left: '75%', top: '35%' }
+        // Germany - center-north of Europe, east of France
+        position: { left: '68%', top: '40%' }
     },
     {
-        id: 'valentiargenti',
-        name: 'Valenti',
-        country: 'Italia',
-        href: '/casistudio/valentiargenti',
-        tags: ['Amazon', 'Made in Italy'],
-        position: { left: '77%', top: '48%' }
+        id: 'pegasium',
+        name: 'Pegasium',
+        country: 'Francia',
+        href: '/casistudio/pegasium',
+        tags: ['Marketplace', 'France'],
+        // France - west-central Europe
+        position: { left: '62%', top: '48%' }
     },
     {
         id: 'dermomamma',
@@ -61,7 +57,17 @@ const caseStudies: CaseStudy[] = [
         country: 'Spagna',
         href: '/casistudio/dermomamma',
         tags: ['Marketplace', 'Healthcare'],
-        position: { left: '65%', top: '52%' }
+        // Spain - Iberian Peninsula, southwest Europe
+        position: { left: '58%', top: '58%' }
+    },
+    {
+        id: 'valentiargenti',
+        name: 'Valenti',
+        country: 'Italia',
+        href: '/casistudio/valentiargenti',
+        tags: ['Amazon', 'Made in Italy'],
+        // Italy - boot-shaped peninsula, south of Germany
+        position: { left: '70%', top: '55%' }
     }
 ];
 
@@ -155,7 +161,7 @@ export const CaseStudyMap = () => {
                 )}
             </div>
 
-            {/* Mobile: List of Case Studies (always visible on mobile) */}
+            {/* Mobile: List of Case Studies */}
             <div className="md:hidden grid gap-4">
                 {caseStudies.map((study) => (
                     <Link
