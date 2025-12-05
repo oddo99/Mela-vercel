@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
+import { Turnstile } from '@marsidev/react-turnstile';
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
@@ -14,11 +15,19 @@ export default function ContactPage() {
         phone: '',
         message: ''
     });
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!captchaToken) {
+            setStatus('error');
+            setErrorMessage('Per favore completa la verifica CAPTCHA');
+            return;
+        }
+
         setStatus('loading');
         setErrorMessage('');
 
@@ -28,7 +37,7 @@ export default function ContactPage() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, captchaToken }),
             });
 
             const data = await response.json();
@@ -39,6 +48,7 @@ export default function ContactPage() {
 
             setStatus('success');
             setFormData({ name: '', email: '', phone: '', message: '' });
+            setCaptchaToken(null);
 
             // Reset success message after 5 seconds
             setTimeout(() => setStatus('idle'), 5000);
@@ -231,6 +241,16 @@ export default function ContactPage() {
                                             required
                                             disabled={status === 'loading'}
                                             className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:bg-gray-50 disabled:cursor-not-allowed"
+                                        />
+                                    </div>
+
+                                    {/* Cloudflare Turnstile CAPTCHA */}
+                                    <div className="flex justify-center">
+                                        <Turnstile
+                                            siteKey={process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'}
+                                            onSuccess={(token) => setCaptchaToken(token)}
+                                            onError={() => setCaptchaToken(null)}
+                                            onExpire={() => setCaptchaToken(null)}
                                         />
                                     </div>
 
