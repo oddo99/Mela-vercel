@@ -28,7 +28,7 @@ export async function POST(request: Request) {
         // Invia email con Resend
         const { data, error } = await resend.emails.send({
             from: 'Mela Services Website <onboarding@resend.dev>', // Temporary - user will update
-            to: ['info@mela.services'],
+            to: ['anything@estoupri.resend.dev'],
             replyTo: email,
             subject: `Nuovo messaggio da ${name}`,
             html: `
