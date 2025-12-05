@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Marquee } from "@/components/ui/Marquee";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { PartnersSlider } from "@/components/ui/PartnersSlider";
 import {
   ShoppingCart,
   Globe,
@@ -107,6 +108,9 @@ export default function HomePage() {
             </div>
           </div>
         </Section>
+
+        {/* Partners Slider Section */}
+        <PartnersSlider />
 
         {/* Premium Grid Services (Replaced Bento) */}
         <Section className="bg-gray-50 py-24">

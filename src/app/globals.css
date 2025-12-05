@@ -17,6 +17,7 @@
   --font-sans: var(--font-exo-2);
 
   --animate-fade-in: fade-in 0.5s ease-out forwards;
+  --animate-scroll-infinite: scroll-infinite 30s linear infinite;
 
   @keyframes fade-in {
     from {
@@ -27,6 +28,16 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes scroll-infinite {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
     }
   }
 }
