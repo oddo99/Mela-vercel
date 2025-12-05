@@ -80,7 +80,7 @@ export default function HomePage() {
 
           {/* Marquee - Positioned absolutely but visible due to removed overflow-hidden on Section */}
           <div className="absolute bottom-0 left-0 w-[110%] -translate-x-[5%] translate-y-1/2 rotate-[-2deg] bg-[#FFD700] py-4 shadow-xl z-20">
-            <Marquee className="text-[#0B223A]" repeat={10} duration={20}>
+            <Marquee className="text-[#0B223A]" repeat={10} duration={60}>
               <span className="mx-8 text-2xl font-black uppercase tracking-widest">Marketplace</span>
               <span className="mx-8 text-2xl font-black uppercase tracking-widest">•</span>
               <span className="mx-8 text-2xl font-black uppercase tracking-widest">E-commerce</span>
