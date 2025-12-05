@@ -5,11 +5,11 @@ import React from 'react';
 const certifications = [
     {
         name: 'Partner 1',
-        url: 'https://staging.mela.services/wp-content/uploads/2025/10/Progetto-senza-titolo-2-150x150.png'
+        url: 'https://staging.mela.services/wp-content/uploads/2025/12/Progetto-senza-titolo-2-150x150-removebg-preview.png'
     },
     {
         name: 'Partner 2',
-        url: 'https://staging.mela.services/wp-content/uploads/2025/10/Progetto-senza-titolo-1-1-150x150.png'
+        url: 'https://staging.mela.services/wp-content/uploads/2025/12/Progetto-senza-titolo-1-1-150x150-removebg-preview.png'
     },
     {
         name: 'Partner 3',
@@ -17,11 +17,11 @@ const certifications = [
     },
     {
         name: 'Partner 4',
-        url: 'https://staging.mela.services/wp-content/uploads/2025/10/Progetto-senza-titolo-1-copia-6-150x150.png'
+        url: 'https://staging.mela.services/wp-content/uploads/2025/12/Progetto-senza-titolo-1-copia-6-150x150-removebg-preview.png'
     },
     {
         name: 'Partner 5',
-        url: 'https://staging.mela.services/wp-content/uploads/2025/10/Progetto-senza-titolo-1-2-150x150.png'
+        url: 'https://staging.mela.services/wp-content/uploads/2025/12/Progetto-senza-titolo-1-2-150x150-removebg-preview.png'
     },
     {
         name: 'Partner 6',
