@@ -67,11 +67,23 @@ const caseStudies: CaseStudy[] = [
 export const CaseStudyMap = () => {
     const [activePin, setActivePin] = useState<string | null>(null);
 
+    // Keep card visible when hovering over it
+    const handleCardMouseEnter = () => {
+        // Don't clear activePin when entering the card
+    };
+
+    const handleCardMouseLeave = () => {
+        setActivePin(null);
+    };
+
     return (
         <div className="w-full">
             {/* Map Container */}
-            <div className="relative w-full aspect-[2/1] max-w-6xl mx-auto">
-                {/* World Map SVG Background */}
+            <div
+                className="relative w-full aspect-[2/1] max-w-6xl mx-auto"
+                onMouseLeave={() => setActivePin(null)}
+            >
+                {/* World Map Background */}
                 <div className="absolute inset-0 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                     <img
                         src="/images/world-map.png"
@@ -87,7 +99,6 @@ export const CaseStudyMap = () => {
                         className="absolute transform -translate-x-1/2 -translate-y-1/2 z-10"
                         style={{ left: study.position.left, top: study.position.top }}
                         onMouseEnter={() => setActivePin(study.id)}
-                        onMouseLeave={() => setActivePin(null)}
                     >
                         {/* Pin with pulse animation */}
                         <Link href={study.href} className="block relative group">
@@ -102,7 +113,7 @@ export const CaseStudyMap = () => {
                                 <div className="w-2 h-2 rounded-full bg-white" />
                             </div>
 
-                            {/* Tooltip Label - Always visible on hover */}
+                            {/* Tooltip Label */}
                             <div className={`absolute left-1/2 -translate-x-1/2 bottom-full mb-2 
                              px-3 py-1 bg-[#0B223A] text-white text-sm font-medium 
                              rounded-lg whitespace-nowrap shadow-xl
@@ -116,11 +127,15 @@ export const CaseStudyMap = () => {
                     </div>
                 ))}
 
-                {/* Active Case Study Card - Shows on hover */}
+                {/* Active Case Study Card - Stays visible when hovering */}
                 {activePin && (
-                    <div className="absolute right-4 top-4 w-72 bg-white rounded-xl shadow-2xl 
-                        border border-gray-100 overflow-hidden z-20
-                        animate-fade-in">
+                    <div
+                        className="absolute right-4 top-4 w-72 bg-white rounded-xl shadow-2xl 
+                      border border-gray-100 overflow-hidden z-20
+                      animate-fade-in"
+                        onMouseEnter={handleCardMouseEnter}
+                        onMouseLeave={handleCardMouseLeave}
+                    >
                         {caseStudies.filter(s => s.id === activePin).map(study => (
                             <Link href={study.href} key={study.id} className="block group">
                                 <div className="p-5">
