@@ -1,13 +1,13 @@
 "use client";
+import React from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 
 interface MarqueeProps {
     className?: string;
     reverse?: boolean;
     pauseOnHover?: boolean;
     children?: React.ReactNode;
-    vertical?: boolean;
+    vertical?: boolean; // Kept for interface compatibility but forcing horizontal now
     repeat?: number;
     duration?: number;
 }
@@ -19,14 +19,14 @@ export function Marquee({
     children,
     vertical = false,
     repeat = 4,
-    duration = 20,
+    duration = 30, // Default to matched CSS duration if possible, but we use class
     ...props
 }: MarqueeProps) {
     return (
         <div
             {...props}
             className={cn(
-                "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+                "group flex overflow-hidden p-2 gap-[--gap] [--gap:1rem]",
                 {
                     "flex-row": !vertical,
                     "flex-col": vertical,
@@ -34,28 +34,39 @@ export function Marquee({
                 className
             )}
         >
-            {Array(repeat)
-                .fill(0)
-                .map((_, i) => (
-                    <motion.div
-                        key={i}
-                        initial={{ x: reverse ? "-100%" : "0%" }}
-                        animate={{ x: reverse ? "0%" : "-100%" }}
-                        transition={{
-                            duration: duration,
-                            repeat: Infinity,
-                            ease: "linear",
-                        }}
-                        className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
-                            "animate-marquee flex-row": !vertical,
-                            "animate-marquee-vertical flex-col": vertical,
-                            "group-hover:[animation-play-state:paused]": pauseOnHover,
-                            "[animation-direction:reverse]": reverse,
-                        })}
-                    >
+            {/* First Set */}
+            <div
+                className={cn("flex shrink-0 items-center gap-[--gap] animate-scroll-infinite", {
+                    "flex-row": !vertical,
+                    "flex-col": vertical,
+                    "group-hover:[animation-play-state:paused]": pauseOnHover,
+                    "[animation-direction:reverse]": reverse,
+                })}
+                style={{ animationDuration: `${duration}s` }}
+            >
+                {Array(repeat).fill(0).map((_, i) => (
+                    <React.Fragment key={i}>
                         {children}
-                    </motion.div>
+                    </React.Fragment>
                 ))}
+            </div>
+
+            {/* Duplicate Set for Seamless Loop */}
+            <div
+                className={cn("flex shrink-0 items-center gap-[--gap] animate-scroll-infinite", {
+                    "flex-row": !vertical,
+                    "flex-col": vertical,
+                    "group-hover:[animation-play-state:paused]": pauseOnHover,
+                    "[animation-direction:reverse]": reverse,
+                })}
+                style={{ animationDuration: `${duration}s` }}
+            >
+                {Array(repeat).fill(0).map((_, i) => (
+                    <React.Fragment key={i}>
+                        {children}
+                    </React.Fragment>
+                ))}
+            </div>
         </div>
     );
 }
