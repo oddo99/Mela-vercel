@@ -57,7 +57,7 @@ export const CertificationsSlider = () => {
                 {/* Scrolling container */}
                 <div className="flex w-full items-center">
                     {/* First set of logos */}
-                    <div className="flex animate-scroll-infinite gap-16 px-8 items-center">
+                    <div className="flex animate-scroll-infinite gap-16 px-8 items-center" style={{ animationDuration: '20s' }}>
                         {certifications.map((cert, index) => (
                             <div
                                 key={`set1-${index}`}
@@ -73,7 +73,7 @@ export const CertificationsSlider = () => {
                     </div>
 
                     {/* Duplicate set for seamless loop */}
-                    <div className="flex animate-scroll-infinite gap-16 px-8 items-center">
+                    <div className="flex animate-scroll-infinite gap-16 px-8 items-center" style={{ animationDuration: '20s' }}>
                         {certifications.map((cert, index) => (
                             <div
                                 key={`set2-${index}`}
