@@ -86,7 +86,7 @@ export const CaseStudyMap = () => {
                     <img
                         src="/images/world-map.png"
                         alt="World Map"
-                        className="w-full h-full object-cover opacity-90 brightness-50 contrast-125 saturate-0"
+                        className="w-full h-full object-cover opacity-90 brightness-100 contrast-125 saturate-0"
                     />
                 </div>
 
