@@ -159,7 +159,7 @@ export default function HomePage() {
                   <span className="text-[#FFD700]">Noi lo facciamo vendere.</span>
                 </h2>
                 <p className="mb-8 text-xl text-gray-600 leading-relaxed">
-                  Il nostro team unisce esperienza e innovazione, con professionisti esperti e giovani talenti pronti a offrire soluzioni sicure e nuove.
+                  Il nostro team unisce esperienza e innovazione, con professionisti esperti pronti a offrire soluzioni sicure e innovative.
                 </p>
                 <div className="space-y-6">
                   {[
