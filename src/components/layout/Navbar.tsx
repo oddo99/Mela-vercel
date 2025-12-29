@@ -49,13 +49,8 @@ export const Navbar = ({ variant = 'light' }: NavbarProps) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // For dark variant pages, always show solid background
-    // For light variant pages, show transparent at top, solid when scrolled
-    const isTransparent = !isDark && !scrolled;
-
-    const navBgClass = isTransparent
-        ? 'bg-transparent'
-        : 'bg-[#0a1628]/95 backdrop-blur-xl border-b border-white/5';
+    // Always show solid background for consistent appearance
+    const navBgClass = 'bg-[#0a1628]/95 backdrop-blur-xl border-b border-white/5';
 
     return (
         <nav className={`fixed top-0 z-50 w-full transition-all duration-500 ease-out ${navBgClass}`}>
