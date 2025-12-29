@@ -70,12 +70,16 @@ export default function HomePage() {
               Acceleriamo la tua crescita digitale su Marketplace ed E-commerce.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button size="lg" className="h-14 rounded-full bg-[#FFD700] px-8 text-lg font-bold text-[#0B223A] hover:bg-[#FFC700] hover:shadow-[0_0_40px_-10px_rgba(255,215,0,0.5)]">
-                Inizia Ora
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 rounded-full border-2 border-white/20 bg-transparent px-8 text-lg font-bold text-white hover:bg-white/10">
-                I Nostri Servizi
-              </Button>
+              <Link href="/contatti">
+                <Button size="lg" className="h-14 rounded-full bg-[#FFD700] px-8 text-lg font-bold text-[#0B223A] hover:bg-[#FFC700] hover:shadow-[0_0_40px_-10px_rgba(255,215,0,0.5)]">
+                  Inizia Ora
+                </Button>
+              </Link>
+              <Link href="/servizi">
+                <Button size="lg" variant="outline" className="h-14 rounded-full border-2 border-white/20 bg-transparent px-8 text-lg font-bold text-white hover:bg-white/10">
+                  I Nostri Servizi
+                </Button>
+              </Link>
             </div>
           </FadeIn>
 
@@ -267,9 +271,11 @@ export default function HomePage() {
             <p className="mx-auto mb-10 max-w-2xl text-xl text-gray-300">
               Trasforma la tua visione in risultati concreti con il partner giusto.
             </p>
-            <Button size="lg" className="h-16 rounded-full bg-white px-10 text-xl font-bold text-[#0B223A] hover:bg-gray-100 hover:scale-105 transition-transform">
-              Contattaci Ora
-            </Button>
+            <Link href="/contatti">
+              <Button size="lg" className="h-16 rounded-full bg-white px-10 text-xl font-bold text-[#0B223A] hover:bg-gray-100 hover:scale-105 transition-transform">
+                Contattaci Ora
+              </Button>
+            </Link>
           </FadeIn>
         </Section>
 

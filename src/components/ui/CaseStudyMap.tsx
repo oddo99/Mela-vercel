@@ -82,11 +82,11 @@ export const CaseStudyMap = () => {
                 onMouseLeave={() => setActivePin(null)}
             >
                 {/* World Map Background */}
-                <div className="absolute inset-0 rounded-2xl overflow-hidden bg-gray-50">
+                <div className="absolute inset-0 rounded-2xl overflow-hidden bg-white border border-slate-100">
                     <img
                         src="/images/world-map.png"
                         alt="World Map"
-                        className="w-full h-full object-cover contrast-125 opacity-90"
+                        className="w-full h-full object-cover opacity-90 brightness-50 contrast-125 saturate-0"
                     />
                 </div>
 

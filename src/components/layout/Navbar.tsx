@@ -67,9 +67,9 @@ export const Navbar = ({ variant = 'light' }: NavbarProps) => {
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="relative">
                         <img
-                            src="https://mela.services/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/05/logo-mela-x2.png.webp"
+                            src="/images/logo-mela.png"
                             alt="Mela Services"
-                            className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+                            className="h-14 md:h-16 lg:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
                         />
                         {/* Glow effect on hover */}
                         <div className="absolute inset-0 -z-10 bg-[#FFD700]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
