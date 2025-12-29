@@ -62,23 +62,31 @@ export default function EcommercePage() {
             <main>
                 {/* Hero Section */}
                 <Section className="relative py-24 lg:py-32">
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#FFD700]/10 via-transparent to-transparent" />
-                    <FadeIn className="container relative z-10 text-center">
-                        <h1 className="mb-8 text-5xl font-black tracking-tight md:text-7xl lg:text-8xl leading-tight">
-                            E-COMMERCE <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#B8860B]">
-                                SUCCESS
-                            </span>
-                        </h1>
-                        <p className="mx-auto mb-10 max-w-3xl text-xl font-light text-gray-300 md:text-2xl leading-relaxed">
-                            Dalla pianificazione costi e ricavi fino alla fase di creazione e gestione di contenuti per le vetrine online.
-                        </p>
-                        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                            <Button size="lg" className="h-14 rounded-full bg-[#FFD700] px-8 text-lg font-bold text-[#0B223A] hover:bg-[#FFC700] hover:shadow-[0_0_40px_-10px_rgba(255,215,0,0.5)]">
-                                Richiedi una Consulenza
-                            </Button>
+                    <div className="container relative z-10">
+                        <div className="mx-auto max-w-4xl text-center">
+                            <FadeIn>
+                                <h1 className="mb-6 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
+                                    E-commerce
+                                </h1>
+                                <p className="mx-auto mb-10 max-w-2xl text-xl text-gray-300 md:text-2xl">
+                                    Dalla pianificazione costi e ricavi fino alla fase di creazione e gestione di contenuti per le vetrine online.
+                                </p>
+                                <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                                    <Link href="/contatti">
+                                        <Button size="lg" className="h-14 rounded-full bg-[#FFD700] px-8 text-lg font-bold text-[#0B223A] hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(255,215,0,0.3)]">
+                                            Inizia ora
+                                        </Button>
+                                    </Link>
+                                </div>
+                            </FadeIn>
                         </div>
-                    </FadeIn>
+                    </div>
+
+                    {/* Background Elements */}
+                    <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+                        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[#FFD700]/5 blur-[120px]" />
+                        <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-blue-500/10 blur-[100px]" />
+                    </div>
                 </Section>
 
                 {/* Le Tappe per il Successo (Main Services) */}
