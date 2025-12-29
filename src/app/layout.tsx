@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Exo_2 } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
@@ -21,6 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" suppressHydrationWarning>
+      <head>
+        {/* iubenda Cookie Banner */}
+        <Script
+          id="iubenda-cookie-banner"
+          strategy="beforeInteractive"
+          src="https://embeds.iubenda.com/widgets/0c69c264-45d9-44a0-86a4-3ff24bf1e1dc.js"
+        />
+      </head>
       <body
         className={`${exo2.variable} antialiased`}
         suppressHydrationWarning
