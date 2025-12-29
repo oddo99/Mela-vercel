@@ -120,7 +120,7 @@ export default function ServicesPage() {
                 </Section>
 
                 {/* Core Services Section - White Background */}
-                <Section className="py-24 bg-white text-[#0B223A]">
+                <Section className="py-24 lg:py-32 bg-white text-[#0B223A]">
                     <div className="container">
                         <FadeIn>
                             <div className="text-center mb-20">
@@ -156,7 +156,7 @@ export default function ServicesPage() {
                 </Section>
 
                 {/* Digital Marketing & SEO Section - Dark Background */}
-                <Section className="py-24 bg-[#0B223A] text-white">
+                <Section className="py-24 lg:py-32 bg-[#0B223A] text-white">
                     <div className="container">
                         <FadeIn>
                             <div className="text-center mb-20">
@@ -192,7 +192,7 @@ export default function ServicesPage() {
                 </Section>
 
                 {/* Content & Email Section - White Background */}
-                <Section className="py-24 bg-white text-[#0B223A]">
+                <Section className="py-24 lg:py-32 bg-white text-[#0B223A]">
                     <div className="container">
                         <FadeIn>
                             <div className="text-center mb-20">
@@ -228,7 +228,7 @@ export default function ServicesPage() {
                 </Section>
 
                 {/* Latest Projects Section - Dark Background */}
-                <Section className="py-24 bg-[#0B223A] relative overflow-hidden">
+                <Section className="py-24 lg:py-32 bg-[#0B223A] relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
                         <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#FFD700]/10 blur-[120px]" />
                     </div>
