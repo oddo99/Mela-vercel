@@ -100,7 +100,7 @@ export default function LeadsPage() {
                             </div>
                         </FadeIn>
 
-                        <div className="grid gap-8 md:grid-cols-3">
+                        <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
                             {steps.map((step, index) => (
                                 <FadeIn key={index} delay={index * 0.1} className="h-full">
                                     <div className="h-full p-8 bg-[#1a3a5a] border border-white/20 rounded-2xl hover:border-[#FFD700]/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">

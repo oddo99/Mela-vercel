@@ -132,7 +132,7 @@ export default function ContactPage() {
                                         <h3 className="mb-4 font-semibold text-gray-900">Social Media</h3>
                                         <div className="flex gap-4">
                                             <a
-                                                href="https://facebook.com"
+                                                href="https://www.facebook.com/melasrl"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-primary transition-colors hover:bg-primary hover:text-white"
@@ -140,7 +140,7 @@ export default function ContactPage() {
                                                 <Facebook className="h-5 w-5" />
                                             </a>
                                             <a
-                                                href="https://instagram.com"
+                                                href="https://www.instagram.com/mela.services/"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-primary transition-colors hover:bg-primary hover:text-white"
@@ -148,7 +148,7 @@ export default function ContactPage() {
                                                 <Instagram className="h-5 w-5" />
                                             </a>
                                             <a
-                                                href="https://linkedin.com"
+                                                href="https://www.linkedin.com/company/melaservices"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-primary transition-colors hover:bg-primary hover:text-white"
