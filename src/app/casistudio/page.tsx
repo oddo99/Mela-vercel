@@ -184,7 +184,7 @@ export default function CaseStudiesPage() {
                 </Section>
 
                 {/* Filter Section */}
-                <Section className="bg-white pt-12 pb-4">
+                <Section className="bg-white pt-15 md:pt-15 lg:pt-15 pb-5 md:pb-5 lg:pb-5">
                     <div className="container">
                         <div className="flex flex-wrap justify-center gap-4">
                             {categories.map((category) => (
@@ -206,7 +206,7 @@ export default function CaseStudiesPage() {
                 </Section>
 
                 {/* Case Studies Grid */}
-                <Section className="bg-white py-12 lg:py-20">
+                <Section className="bg-white pt-15 md:pt-15 lg:pt-15 pb-5 md:pb-5 lg:pb-5">
                     <div className="container">
                         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                             {filteredStudies.map((study, index) => (
@@ -246,9 +246,11 @@ export default function CaseStudiesPage() {
                             <p className="mx-auto mb-10 max-w-2xl text-xl text-white/90">
                                 Contattaci per analizzare le potenzialità del tuo progetto.
                             </p>
-                            <Button size="lg" className="rounded-full bg-[#FFD700] text-[#0B223A] hover:bg-[#FFC700]">
-                                Parla con noi
-                            </Button>
+                            <Link href="/contatti">
+                                <Button size="lg" className="rounded-full bg-[#FFD700] text-[#0B223A] hover:bg-[#FFC700]">
+                                    Parla con noi
+                                </Button>
+                            </Link>
                         </div>
                     </FadeIn>
                 </Section>
