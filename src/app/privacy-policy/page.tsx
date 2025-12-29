@@ -1,17 +1,11 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import Script from 'next/script';
 
 export default function PrivacyPolicyPage() {
-    useEffect(() => {
-        // Force reload iubenda script if already loaded
-        if (window._iub) {
-            window._iub.cons_instructions = window._iub.cons_instructions || [];
-        }
-    }, []);
 
     return (
         <div className="min-h-screen bg-white">
