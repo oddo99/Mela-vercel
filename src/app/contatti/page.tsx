@@ -129,7 +129,7 @@ export default function ContactPage() {
                         </div>
 
                         {/* Contact Form - GoHighLevel Standard Embed */}
-                        <div id="ghl-form-container" className="w-full max-w-xl mx-auto">
+                        <div id="ghl-form-container" className="w-full max-w-[400px] mx-auto">
                             <iframe
                                 src="https://api.leadconnectorhq.com/widget/form/UMuYDb5YtJ0wQfbrTPcP"
                                 style={{ width: '100%', height: '100%', border: 'none', borderRadius: '4px' }}
