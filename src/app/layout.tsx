@@ -4,6 +4,8 @@ import Script from "next/script";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { GTMPageView } from "@/components/analytics/GTMPageView";
+import { Suspense } from "react";
 
 const exo2 = Exo_2({
   variable: "--font-exo-2",
@@ -49,6 +51,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
+
+        {/* GTM PageView Tracker */}
+        <Suspense fallback={null}>
+          <GTMPageView />
+        </Suspense>
 
         {children}
         <SpeedInsights />

@@ -1,0 +1,115 @@
+{
+    "exportFormatVersion": 2,
+    "containerVersion": {
+        "tag": [
+            {
+                "accountId": "6214207842",
+                "containerId": "194766019",
+                "tagId": "1",
+                "name": "iubenda Cookie Solution",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script type=\"text/javascript\" src=\"https://embeds.iubenda.com/widgets/0c69c264-45d9-44a0-86a4-3ff24bf1e1dc.js\"></script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1735525000000",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "6214207842",
+                "containerId": "194766019",
+                "tagId": "2",
+                "name": "Debug - SPA Pageview",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>console.log('GTM SPA Pageview');</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1735525000001",
+                "firingTriggerId": [
+                    "100"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "6214207842",
+                "containerId": "194766019",
+                "tagId": "3",
+                "name": "Debug - Click",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>console.log('GTM Click');</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1735525000002",
+                "firingTriggerId": [
+                    "101"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6214207842",
+                "containerId": "194766019",
+                "triggerId": "100",
+                "name": "Custom Event - pageview",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "pageview"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1735525000100"
+            },
+            {
+                "accountId": "6214207842",
+                "containerId": "194766019",
+                "triggerId": "101",
+                "name": "Click - All Elements",
+                "type": "CLICK",
+                "fingerprint": "1735525000101"
+            }
+        ],
+        "fingerprint": "1735525000000"
+    }
+}
