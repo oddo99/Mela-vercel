@@ -105,10 +105,11 @@ export default function ContactPage() {
                             </div>
 
                             {/* Contact Form - GoHighLevel Embed */}
-                            <div className="w-full max-w-md mx-auto lg:mx-0">
+                            <div className="w-full max-w-md mx-auto lg:mx-0 overflow-hidden">
                                 <iframe
                                     src="https://api.leadconnectorhq.com/widget/form/UMuYDb5YtJ0wQfbrTPcP"
-                                    style={{ width: '100%', height: '700px', border: 'none' }}
+                                    style={{ width: '100%', height: '700px', border: 'none', overflow: 'hidden' }}
+                                    scrolling="no"
                                     id="inline-UMuYDb5YtJ0wQfbrTPcP"
                                     data-layout="{'id':'INLINE'}"
                                     data-trigger-type="alwaysShow"
