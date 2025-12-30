@@ -254,23 +254,71 @@ export default function ServicesPage() {
                             <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto mb-12">
                                 {/* Life120 */}
                                 <Link href="/casistudio/life120" className="group">
-                                    <div className="aspect-video bg-[#1a3a5a] rounded-2xl border border-white/5 flex items-center justify-center hover:border-[#FFD700]/50 transition-all duration-300 overflow-hidden relative">
-                                        <span className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors">Life120</span>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B223A]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    <div className="relative aspect-video rounded-2xl border border-white/10 overflow-hidden bg-gradient-to-br from-[#1a3a5a] via-[#0B223A] to-[#1a3a5a] hover:border-[#FFD700]/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#FFD700]/10">
+                                        {/* Decorative gradient orb */}
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#FFD700]/20 to-transparent rounded-full blur-2xl opacity-50 group-hover:opacity-100 transition-opacity" />
+
+                                        {/* Category badge */}
+                                        <div className="absolute top-4 left-4">
+                                            <span className="px-3 py-1 text-xs font-semibold bg-[#FFD700]/20 text-[#FFD700] rounded-full border border-[#FFD700]/30">
+                                                Cura e Benessere
+                                            </span>
+                                        </div>
+
+                                        {/* Content */}
+                                        <div className="absolute inset-0 flex flex-col justify-end p-6">
+                                            <h3 className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors mb-2">Life120</h3>
+                                            <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Strategia omnicanale per massimizzare la visibilità</p>
+                                        </div>
+
+                                        {/* Arrow indicator */}
+                                        <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#FFD700] transition-all duration-300">
+                                            <ArrowRight className="w-5 h-5 text-white/50 group-hover:text-[#0B223A] transition-colors" />
+                                        </div>
                                     </div>
                                 </Link>
+
                                 {/* Naturwaren */}
                                 <Link href="/casistudio/naturwaren" className="group">
-                                    <div className="aspect-video bg-[#1a3a5a] rounded-2xl border border-white/5 flex items-center justify-center hover:border-[#FFD700]/50 transition-all duration-300 overflow-hidden relative">
-                                        <span className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors">Naturwaren</span>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B223A]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    <div className="relative aspect-video rounded-2xl border border-white/10 overflow-hidden bg-gradient-to-br from-[#1a3a5a] via-[#0B223A] to-[#1a3a5a] hover:border-[#FFD700]/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#FFD700]/10">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-full blur-2xl opacity-50 group-hover:opacity-100 transition-opacity" />
+
+                                        <div className="absolute top-4 left-4">
+                                            <span className="px-3 py-1 text-xs font-semibold bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-500/30">
+                                                Cura e Benessere
+                                            </span>
+                                        </div>
+
+                                        <div className="absolute inset-0 flex flex-col justify-end p-6">
+                                            <h3 className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors mb-2">Naturwaren</h3>
+                                            <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Prodotti naturali e cosmetici biologici</p>
+                                        </div>
+
+                                        <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#FFD700] transition-all duration-300">
+                                            <ArrowRight className="w-5 h-5 text-white/50 group-hover:text-[#0B223A] transition-colors" />
+                                        </div>
                                     </div>
                                 </Link>
+
                                 {/* Dermomamma */}
                                 <Link href="/casistudio/dermomamma" className="group">
-                                    <div className="aspect-video bg-[#1a3a5a] rounded-2xl border border-white/5 flex items-center justify-center hover:border-[#FFD700]/50 transition-all duration-300 overflow-hidden relative">
-                                        <span className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors">Dermomamma</span>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B223A]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    <div className="relative aspect-video rounded-2xl border border-white/10 overflow-hidden bg-gradient-to-br from-[#1a3a5a] via-[#0B223A] to-[#1a3a5a] hover:border-[#FFD700]/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#FFD700]/10">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-500/20 to-transparent rounded-full blur-2xl opacity-50 group-hover:opacity-100 transition-opacity" />
+
+                                        <div className="absolute top-4 left-4">
+                                            <span className="px-3 py-1 text-xs font-semibold bg-pink-500/20 text-pink-400 rounded-full border border-pink-500/30">
+                                                Beauty
+                                            </span>
+                                        </div>
+
+                                        <div className="absolute inset-0 flex flex-col justify-end p-6">
+                                            <h3 className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors mb-2">Dermomamma</h3>
+                                            <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Strategia multicanale integrata Amazon e TikTok</p>
+                                        </div>
+
+                                        <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#FFD700] transition-all duration-300">
+                                            <ArrowRight className="w-5 h-5 text-white/50 group-hover:text-[#0B223A] transition-colors" />
+                                        </div>
                                     </div>
                                 </Link>
                             </div>
