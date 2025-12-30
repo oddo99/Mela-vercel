@@ -108,7 +108,8 @@ export default function ContactPage() {
                             <div className="w-full max-w-md mx-auto lg:mx-0 overflow-hidden">
                                 <iframe
                                     src="https://api.leadconnectorhq.com/widget/form/UMuYDb5YtJ0wQfbrTPcP"
-                                    style={{ width: '100%', height: '1200px', border: 'none', overflow: 'hidden' }}
+                                    style={{ width: '100%', height: '1250px', border: 'none', overflow: 'hidden', display: 'block' }}
+                                    className="no-scroll"
                                     scrolling="no"
                                     id="inline-UMuYDb5YtJ0wQfbrTPcP"
                                     data-layout="{'id':'INLINE'}"
@@ -119,7 +120,7 @@ export default function ContactPage() {
                                     data-deactivation-type="neverDeactivate"
                                     data-deactivation-value=""
                                     data-form-name="Discover new Marketing Strategies"
-                                    data-height="1200"
+                                    data-height="1250"
                                     data-layout-iframe-id="inline-UMuYDb5YtJ0wQfbrTPcP"
                                     data-form-id="UMuYDb5YtJ0wQfbrTPcP"
                                     title="Discover new Marketing Strategies"
