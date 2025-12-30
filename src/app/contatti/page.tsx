@@ -122,9 +122,12 @@ export default function ContactPage() {
 
 
                 {/* Contact Form Section */}
-                <Section className="bg-gray-50 py-20 lg:py-28">
-                    <div className="container mx-auto px-4 md:px-6 max-w-[400px]">
-
+                <Section className="bg-gray-50 py-0">
+                    <div className="container mx-auto px-0 max-w-[400px]">
+                        <div className="mx-auto text-center mb-4 pt-8">
+                            <h2 className="text-3xl font-bold text-gray-900 mb-2">Inviaci un messaggio</h2>
+                            <p className="text-gray-600">Compila il modulo sottostante e ti ricontatteremo al più presto.</p>
+                        </div>
 
                         {/* Contact Form - GoHighLevel Standard Embed */}
                         <iframe
