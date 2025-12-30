@@ -50,6 +50,18 @@ export const Navbar = ({ variant = 'light' }: NavbarProps) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [mobileMenuOpen]);
+
     // Always show solid background for consistent appearance
     const navBgClass = 'bg-[#0a1628]/95 backdrop-blur-xl border-b border-white/5';
 
