@@ -105,12 +105,10 @@ export default function ContactPage() {
                             </div>
 
                             {/* Contact Form - GoHighLevel Embed */}
-                            <div className="glass-card rounded-3xl border border-gray-100 p-8 shadow-xl">
-                                <h2 className="mb-6 text-2xl font-bold text-gray-900">Invia un messaggio</h2>
-
+                            <div className="w-full">
                                 <iframe
                                     src="https://api.leadconnectorhq.com/widget/form/UMuYDb5YtJ0wQfbrTPcP"
-                                    style={{ width: '100%', height: '800px', border: 'none', borderRadius: '14px' }}
+                                    style={{ width: '100%', height: '700px', border: 'none' }}
                                     id="inline-UMuYDb5YtJ0wQfbrTPcP"
                                     data-layout="{'id':'INLINE'}"
                                     data-trigger-type="alwaysShow"
@@ -120,7 +118,7 @@ export default function ContactPage() {
                                     data-deactivation-type="neverDeactivate"
                                     data-deactivation-value=""
                                     data-form-name="Discover new Marketing Strategies"
-                                    data-height="800"
+                                    data-height="700"
                                     data-layout-iframe-id="inline-UMuYDb5YtJ0wQfbrTPcP"
                                     data-form-id="UMuYDb5YtJ0wQfbrTPcP"
                                     title="Discover new Marketing Strategies"
