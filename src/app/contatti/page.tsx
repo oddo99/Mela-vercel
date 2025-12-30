@@ -105,10 +105,11 @@ export default function ContactPage() {
                             </div>
 
                             {/* Contact Form - GoHighLevel Embed */}
-                            <div className="w-full max-w-md mx-auto lg:mx-0 overflow-hidden">
+                            <div className="relative w-full max-w-md mx-auto lg:mx-0 overflow-hidden"
+                                onWheel={(e) => e.stopPropagation()}>
                                 <iframe
                                     src="https://api.leadconnectorhq.com/widget/form/UMuYDb5YtJ0wQfbrTPcP"
-                                    style={{ width: '100%', height: '725px', border: 'none', overflow: 'hidden' }}
+                                    style={{ width: '100%', height: '780px', border: 'none', overflow: 'hidden' }}
                                     className="no-scroll"
                                     scrolling="no"
                                     id="inline-UMuYDb5YtJ0wQfbrTPcP"
@@ -120,11 +121,13 @@ export default function ContactPage() {
                                     data-deactivation-type="neverDeactivate"
                                     data-deactivation-value=""
                                     data-form-name="Discover new Marketing Strategies"
-                                    data-height="725"
+                                    data-height="780"
                                     data-layout-iframe-id="inline-UMuYDb5YtJ0wQfbrTPcP"
                                     data-form-id="UMuYDb5YtJ0wQfbrTPcP"
                                     title="Discover new Marketing Strategies"
                                 />
+                                {/* Overlay to block scroll bottom margin */}
+                                <div className="absolute bottom-0 left-0 w-full h-[60px] bg-transparent pointer-events-auto" style={{ cursor: 'default' }} />
                             </div>
                         </div>
                     </div>
