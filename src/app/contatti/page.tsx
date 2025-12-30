@@ -278,7 +278,7 @@ export default function ContactPage() {
                             <p className="mb-10 text-xl text-white/90">
                                 Ricevi aggiornamenti, consigli e novità sul mondo del digital marketing direttamente nella tua inbox.
                             </p>
-                            <form className="mx-auto flex max-w-md gap-4">
+                            <form className="mx-auto flex flex-col sm:flex-row max-w-md gap-4">
                                 <input
                                     type="email"
                                     placeholder="La tua email"
@@ -286,7 +286,7 @@ export default function ContactPage() {
                                 />
                                 <button
                                     type="submit"
-                                    className="rounded-full bg-[#FFD700] px-8 py-4 font-semibold text-[#0B223A] transition-all hover:bg-[#FFC700] hover:shadow-xl"
+                                    className="rounded-full bg-[#FFD700] px-8 py-4 font-semibold text-[#0B223A] transition-all hover:bg-[#FFC700] hover:shadow-xl w-full sm:w-auto"
                                 >
                                     Iscriviti
                                 </button>
