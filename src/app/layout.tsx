@@ -15,6 +15,11 @@ const exo2 = Exo_2({
 export const metadata: Metadata = {
   title: "Mela Services",
   description: "Consulenze Marketplace, E-commerce, Leads e Advertising",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
