@@ -252,12 +252,27 @@ export default function ServicesPage() {
                             </p>
 
                             <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto mb-12">
-                                {/* Project Placeholders */}
-                                {[1, 2, 3].map((item) => (
-                                    <div key={item} className="aspect-video bg-[#1a3a5a] rounded-2xl border border-white/5 flex items-center justify-center text-white/20 hover:border-[#FFD700]/30 transition-colors">
-                                        <span className="font-medium">Project Preview {item}</span>
+                                {/* Life120 */}
+                                <Link href="/casistudio/life120" className="group">
+                                    <div className="aspect-video bg-[#1a3a5a] rounded-2xl border border-white/5 flex items-center justify-center hover:border-[#FFD700]/50 transition-all duration-300 overflow-hidden relative">
+                                        <span className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors">Life120</span>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B223A]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                                     </div>
-                                ))}
+                                </Link>
+                                {/* Naturwaren */}
+                                <Link href="/casistudio/naturwaren" className="group">
+                                    <div className="aspect-video bg-[#1a3a5a] rounded-2xl border border-white/5 flex items-center justify-center hover:border-[#FFD700]/50 transition-all duration-300 overflow-hidden relative">
+                                        <span className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors">Naturwaren</span>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B223A]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    </div>
+                                </Link>
+                                {/* Dermomamma */}
+                                <Link href="/casistudio/dermomamma" className="group">
+                                    <div className="aspect-video bg-[#1a3a5a] rounded-2xl border border-white/5 flex items-center justify-center hover:border-[#FFD700]/50 transition-all duration-300 overflow-hidden relative">
+                                        <span className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors">Dermomamma</span>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B223A]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    </div>
+                                </Link>
                             </div>
 
                             <Link href="/casistudio">
