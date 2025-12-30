@@ -124,7 +124,7 @@ export default function CaseStudiesPage() {
         {
             client: "Ronco Andrea",
             slug: "roncoandrea",
-            website: null,
+            website: "https://www.impresaedileronco.it/",
             category: "Edilizia",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Strategia digitale per l'edilizia e l'espansione europea.",
@@ -164,7 +164,7 @@ export default function CaseStudiesPage() {
         {
             client: "Grifos Pens",
             slug: "grifos",
-            website: "https://grifos.it/",
+            website: "https://grifos-pens.it/",
             category: "Oggettistica",
             tags: ["Amazon Seller", "Meta ADS", "Amazon ADS"],
             description: "Valorizzazione del Made in Italy attraverso strategie digitali mirate.",
