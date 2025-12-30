@@ -261,7 +261,7 @@ export const Navbar = ({ variant = 'light' }: NavbarProps) => {
                         {/* Contact info */}
                         <div className="pt-4 mt-4 border-t border-white/10">
                             <p className="text-xs text-white/40 text-center">
-                                📧 info@mela.services • 📞 +39 XXX XXX XXXX
+                                📧 info@mela.services • 📞 011 1883 7132
                             </p>
                         </div>
                     </div>

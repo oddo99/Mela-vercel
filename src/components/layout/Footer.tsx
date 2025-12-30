@@ -180,7 +180,7 @@ export const Footer = () => {
                                 <a href="tel:+3901118837132" className="block group">
                                     <div className="flex items-center gap-3 text-white/60 group-hover:text-white transition-colors">
                                         <Phone className="w-5 h-5 text-[#FFD700] shrink-0" />
-                                        <span className="text-sm">+39 011 1883 7132</span>
+                                        <span className="text-sm">011 1883 7132</span>
                                     </div>
                                 </a>
 

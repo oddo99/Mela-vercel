@@ -98,7 +98,7 @@ export default function ContactPage() {
                                         <div>
                                             <h3 className="mb-1 font-semibold text-gray-900">Telefono</h3>
                                             <a href="tel:+3901118837132" className="text-gray-600 hover:text-primary">
-                                                +39 011 1883 7132
+                                                011 1883 7132
                                             </a>
                                         </div>
                                     </div>
