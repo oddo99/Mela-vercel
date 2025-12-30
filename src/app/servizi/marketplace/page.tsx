@@ -68,6 +68,30 @@ export default function MarketplacePage() {
             description:
                 "Una volta online, servono strategie per lanciare i prodotti nei diversi Paesi e incrementare le vendite con campagne social mirate. Bilanciamo prodotto e Brand per la massima efficacia.",
         },
+        {
+            icon: FileText,
+            title: "A+ Content e Brand Store",
+            description:
+                "Creiamo contenuti A+ Premium e Brand Store accattivanti per aumentare la conversione e rafforzare l'identità del tuo brand su Amazon.",
+        },
+        {
+            icon: User,
+            title: "Protezione del Brand",
+            description:
+                "Registrazione al Brand Registry Amazon, monitoraggio seller non autorizzati e gestione delle violazioni per proteggere il tuo marchio.",
+        },
+        {
+            icon: Calculator,
+            title: "Espansione Internazionale",
+            description:
+                "Supporto completo per vendere su Amazon Europa, USA e altri mercati: traduzioni, logistica Pan-EU e strategie di pricing localizzate.",
+        },
+        {
+            icon: Rocket,
+            title: "Gestione Account Health",
+            description:
+                "Monitoraggio costante delle metriche di performance, gestione delle policy Amazon e prevenzione di sospensioni account.",
+        },
     ];
 
     return (
