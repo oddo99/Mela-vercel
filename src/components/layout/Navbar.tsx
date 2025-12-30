@@ -201,8 +201,14 @@ export const Navbar = ({ variant = 'light' }: NavbarProps) => {
             </div>
 
             {/* Mobile Menu */}
-            <div className={`md:hidden overflow-hidden transition-all duration-500 ease-out ${mobileMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="bg-[#0a1628]/98 backdrop-blur-xl border-t border-white/5">
+            {mobileMenuOpen && (
+                <div
+                    className="md:hidden fixed inset-0 top-24 z-40 bg-black/50"
+                    onClick={() => setMobileMenuOpen(false)}
+                />
+            )}
+            <div className={`md:hidden fixed left-0 right-0 top-24 z-50 transition-all duration-500 ease-out ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+                <div className="bg-[#0a1628]/98 backdrop-blur-xl border-t border-white/5 max-h-[calc(100vh-6rem)] overflow-y-auto">
                     <div className="container mx-auto px-4 py-6 space-y-2">
                         <Link
                             href="/"
