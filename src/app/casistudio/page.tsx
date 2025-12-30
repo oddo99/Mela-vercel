@@ -28,6 +28,7 @@ export default function CaseStudiesPage() {
         {
             client: "Dermomamma",
             slug: "dermomamma",
+            website: "https://dermomamma.it/",
             category: "Beauty",
             tags: ["Amazon Seller", "Amazon ADS", "TikTok"],
             description: "Strategia multicanale integrata per il brand Dermomamma.",
@@ -35,6 +36,7 @@ export default function CaseStudiesPage() {
         {
             client: "Ethical Grace",
             slug: "ethicalgrace",
+            website: null,
             category: "Beauty",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Espansione sui marketplace e advertising performante.",
@@ -42,6 +44,7 @@ export default function CaseStudiesPage() {
         {
             client: "Alveario",
             slug: "alveario",
+            website: "https://alveario.it/",
             category: "Cibi e Bevande",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Gestione completa account e campagne pubblicitarie.",
@@ -49,6 +52,7 @@ export default function CaseStudiesPage() {
         {
             client: "Formularity",
             slug: "formularity",
+            website: "https://formularity.it/",
             category: "Cura e Benessere",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Ottimizzazione listing e strategie di crescita.",
@@ -56,6 +60,7 @@ export default function CaseStudiesPage() {
         {
             client: "Eusphera",
             slug: "eusphera",
+            website: "https://eusphera.com/",
             category: "Cura e Benessere",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Lancio e consolidamento del brand sui canali digitali.",
@@ -63,6 +68,7 @@ export default function CaseStudiesPage() {
         {
             client: "Life 120",
             slug: "life120",
+            website: "https://life120.it/",
             category: "Cura e Benessere",
             tags: ["Amazon", "Ebay", "Meta ADS", "Google ADS"],
             description: "Strategia omnicanale per massimizzare la visibilità.",
@@ -70,6 +76,7 @@ export default function CaseStudiesPage() {
         {
             client: "Naturwaren",
             slug: "naturwaren",
+            website: "https://naturwaren.it/",
             category: "Cura e Benessere",
             tags: ["Amazon Seller", "Amazon Vendor", "Amazon ADS"],
             description: "Gestione ibrida Seller/Vendor e advertising avanzato.",
@@ -77,6 +84,7 @@ export default function CaseStudiesPage() {
         {
             client: "Farmacia 724",
             slug: "farmacia724",
+            website: "https://farmacia724.com/",
             category: "Cura e Benessere",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Digitalizzazione e crescita delle vendite online.",
@@ -84,6 +92,7 @@ export default function CaseStudiesPage() {
         {
             client: "Glielmi",
             slug: "glielmi",
+            website: "https://glemishoponline.com/",
             category: "Abbigliamento e Accessori",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Supporto strategico per l'espansione sui marketplace.",
@@ -91,6 +100,7 @@ export default function CaseStudiesPage() {
         {
             client: "Pegasium",
             slug: "pegasium",
+            website: null,
             category: "Accessori Auto",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Ottimizzazione conversioni e gestione campagne.",
@@ -98,6 +108,7 @@ export default function CaseStudiesPage() {
         {
             client: "FT Metalli",
             slug: "ftmetalli",
+            website: "https://ftmetalli.it/",
             category: "Edilizia",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Strategia B2B e B2C sui principali marketplace.",
@@ -105,6 +116,7 @@ export default function CaseStudiesPage() {
         {
             client: "Molino Chiavazza",
             slug: "molinochiavazza",
+            website: "https://molinochiavazza.com/",
             category: "Cibi e Bevande",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Posizionamento del brand e incremento vendite.",
@@ -112,6 +124,7 @@ export default function CaseStudiesPage() {
         {
             client: "Ronco Andrea",
             slug: "roncoandrea",
+            website: null,
             category: "Edilizia",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Strategia digitale per l'edilizia e l'espansione europea.",
@@ -119,6 +132,7 @@ export default function CaseStudiesPage() {
         {
             client: "Naturae Victus",
             slug: "naturaevictus",
+            website: null,
             category: "Cibi e Bevande",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Lancio prodotti e gestione advertising.",
@@ -126,6 +140,7 @@ export default function CaseStudiesPage() {
         {
             client: "Rambloc",
             slug: "rambloc",
+            website: "https://rambloc.it/",
             category: "Oggettistica",
             tags: ["Amazon Seller", "Ebay", "Meta ADS", "Google ADS"],
             description: "Mela Services ha affiancato Rambloc con una strategia integrata su Amazon, eBay e advertising multicanale.",
@@ -133,6 +148,7 @@ export default function CaseStudiesPage() {
         {
             client: "Valenti Argenti",
             slug: "valentiargenti",
+            website: "https://valentiargenti.it/",
             category: "Oggettistica",
             tags: ["Amazon Seller", "Amazon Vendor", "Amazon ADS"],
             description: "Gestione strategica account Vendor e Seller con focus su Amazon Advertising.",
@@ -140,6 +156,7 @@ export default function CaseStudiesPage() {
         {
             client: "Colleoni",
             slug: "colleoni",
+            website: null,
             category: "Oggettistica",
             tags: ["Amazon Seller e ADS", "Ebay", "Meta ADS"],
             description: "Metodo end-to-end specifico per Amazon, audit e ottimizzazione contenuti.",
@@ -147,6 +164,7 @@ export default function CaseStudiesPage() {
         {
             client: "Grifos Pens",
             slug: "grifos",
+            website: "https://grifos.it/",
             category: "Oggettistica",
             tags: ["Amazon Seller", "Meta ADS", "Amazon ADS"],
             description: "Valorizzazione del Made in Italy attraverso strategie digitali mirate.",
@@ -154,6 +172,7 @@ export default function CaseStudiesPage() {
         {
             client: "Venetian Beauty",
             slug: "venetian",
+            website: null,
             category: "Beauty",
             tags: ["Amazon Seller", "Meta ADS", "Amazon ADS"],
             description: "Lancio e crescita del brand nel settore beauty.",
@@ -213,7 +232,20 @@ export default function CaseStudiesPage() {
                                 <FadeIn key={`${study.client}-${index}`} delay={index * 0.05}>
                                     <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-gray-100 p-8 shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10">
                                         <div>
-                                            <h3 className="mb-4 text-2xl font-bold text-gray-900">{study.client}</h3>
+                                            <h3 className="mb-4 text-2xl font-bold text-gray-900">
+                                                {study.website ? (
+                                                    <a
+                                                        href={study.website}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="hover:text-[#FFD700] transition-colors underline decoration-[#FFD700]/30 hover:decoration-[#FFD700]"
+                                                    >
+                                                        {study.client}
+                                                    </a>
+                                                ) : (
+                                                    study.client
+                                                )}
+                                            </h3>
                                             <div className="mb-6 flex flex-wrap gap-2">
                                                 {study.tags.map((tag, i) => (
                                                     <span key={i} className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">
