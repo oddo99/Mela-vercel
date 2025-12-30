@@ -18,7 +18,7 @@ export default function ContactPage() {
                     <div className="container">
                         <div className="mx-auto max-w-4xl text-center">
                             <h1 className="mb-6 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
-                                Contattaci per una <span className="text-[#FFD700]">consulenza gratuita</span>
+                                Contattaci per parlarci del tuo <span className="text-[#FFD700]">progetto</span>
                             </h1>
                             <p className="text-xl text-white/90 md:text-2xl">
                                 Siamo qui per rispondere alle tue domande e supportarti nei tuoi progetti di marketing online
