@@ -128,13 +128,11 @@ export default function ContactPage() {
                             <p className="text-gray-600">Compila il modulo sottostante e ti ricontatteremo al più presto.</p>
                         </div>
 
-                        {/* Contact Form - GoHighLevel Embed */}
-                        <div className="relative w-full max-w-sm mx-auto overflow-hidden" style={{ height: '725px' }}>
+                        {/* Contact Form - GoHighLevel Standard Embed */}
+                        <div id="ghl-form-container" className="w-full max-w-xl mx-auto">
                             <iframe
                                 src="https://api.leadconnectorhq.com/widget/form/UMuYDb5YtJ0wQfbrTPcP"
-                                style={{ width: '100%', height: '800px', border: 'none', overflow: 'hidden' }}
-                                className="no-scroll"
-                                scrolling="no"
+                                style={{ width: '100%', height: '100%', border: 'none', borderRadius: '4px' }}
                                 id="inline-UMuYDb5YtJ0wQfbrTPcP"
                                 data-layout="{'id':'INLINE'}"
                                 data-trigger-type="alwaysShow"
@@ -144,7 +142,7 @@ export default function ContactPage() {
                                 data-deactivation-type="neverDeactivate"
                                 data-deactivation-value=""
                                 data-form-name="Discover new Marketing Strategies"
-                                data-height="800"
+                                data-height="auto"
                                 data-layout-iframe-id="inline-UMuYDb5YtJ0wQfbrTPcP"
                                 data-form-id="UMuYDb5YtJ0wQfbrTPcP"
                                 title="Discover new Marketing Strategies"
