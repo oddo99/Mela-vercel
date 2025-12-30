@@ -64,3 +64,70 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
+
+/* iubenda Banner Custom Styles */
+.iubenda-cs-container {
+  font-family: var(--font-exo-2), sans-serif !important;
+  font-size: 13px !important;
+}
+
+/* Banner background */
+#iubenda-cs-banner .iubenda-cs-container,
+.tb-banner-wrapper,
+.iubenda-cs-content {
+  background-color: #0B223A !important;
+  color: #ffffff !important;
+}
+
+/* Accept button - Gold */
+.iubenda-cs-accept-btn,
+#iubenda-cs-banner .iubenda-cs-accept-btn,
+.tb-btn-accept {
+  background-color: #FFD700 !important;
+  color: #0B223A !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+  padding: 10px 24px !important;
+}
+
+.iubenda-cs-accept-btn:hover,
+.tb-btn-accept:hover {
+  background-color: #FFC700 !important;
+}
+
+/* Customize/Reject buttons */
+.iubenda-cs-customize-btn,
+.iubenda-cs-reject-btn,
+.tb-btn-customize,
+.tb-btn-reject {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 9999px !important;
+  padding: 10px 24px !important;
+}
+
+.iubenda-cs-customize-btn:hover,
+.iubenda-cs-reject-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Make banner smaller */
+#iubenda-cs-banner {
+  max-width: 500px !important;
+  margin: 0 auto 20px auto !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+/* Links */
+.iubenda-cs-content a {
+  color: #FFD700 !important;
+}
+
+/* Top stripe */
+.tb-banner-top-stripe {
+  background: linear-gradient(to right, #FFD700, #FFC700) !important;
+  height: 3px !important;
+}
