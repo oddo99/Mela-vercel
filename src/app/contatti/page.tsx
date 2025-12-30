@@ -1,69 +1,13 @@
 'use client';
 
-import React, { useState } from "react";
-import { Turnstile } from '@marsidev/react-turnstile';
+import React from "react";
+import Script from "next/script";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, CheckCircle, AlertCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 
 export default function ContactPage() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-    });
-    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-    const [errorMessage, setErrorMessage] = useState('');
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-
-        if (!captchaToken) {
-            setStatus('error');
-            setErrorMessage('Per favore completa la verifica CAPTCHA');
-            return;
-        }
-
-        setStatus('loading');
-        setErrorMessage('');
-
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ ...formData, captchaToken }),
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.error || 'Errore durante l\'invio');
-            }
-
-            setStatus('success');
-            setFormData({ name: '', email: '', phone: '', message: '' });
-            setCaptchaToken(null);
-
-            // Reset success message after 5 seconds
-            setTimeout(() => setStatus('idle'), 5000);
-        } catch (error) {
-            setStatus('error');
-            setErrorMessage(error instanceof Error ? error.message : 'Errore durante l\'invio del messaggio');
-        }
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData(prev => ({
-            ...prev,
-            [e.target.name]: e.target.value
-        }));
-    };
 
     return (
         <div className="min-h-screen bg-white">
@@ -160,109 +104,27 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
-                            {/* Contact Form */}
+                            {/* Contact Form - GoHighLevel Embed */}
                             <div className="glass-card rounded-3xl border border-gray-100 p-8 shadow-xl">
                                 <h2 className="mb-6 text-2xl font-bold text-gray-900">Invia un messaggio</h2>
 
-                                {/* Success Message */}
-                                {status === 'success' && (
-                                    <div className="mb-6 flex items-center gap-3 rounded-lg bg-green-50 p-4 text-green-800">
-                                        <CheckCircle className="h-5 w-5 flex-shrink-0" />
-                                        <p className="text-sm font-medium">Messaggio inviato con successo! Ti risponderemo presto.</p>
-                                    </div>
-                                )}
-
-                                {/* Error Message */}
-                                {status === 'error' && (
-                                    <div className="mb-6 flex items-center gap-3 rounded-lg bg-red-50 p-4 text-red-800">
-                                        <AlertCircle className="h-5 w-5 flex-shrink-0" />
-                                        <p className="text-sm font-medium">{errorMessage}</p>
-                                    </div>
-                                )}
-
-                                <form onSubmit={handleSubmit} className="space-y-6">
-                                    <div>
-                                        <label htmlFor="name" className="mb-2 block text-sm font-medium text-gray-700">
-                                            Nome *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            required
-                                            disabled={status === 'loading'}
-                                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:bg-gray-50 disabled:cursor-not-allowed"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <label htmlFor="email" className="mb-2 block text-sm font-medium text-gray-700">
-                                            Email *
-                                        </label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            required
-                                            disabled={status === 'loading'}
-                                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:bg-gray-50 disabled:cursor-not-allowed"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <label htmlFor="phone" className="mb-2 block text-sm font-medium text-gray-700">
-                                            Telefono
-                                        </label>
-                                        <input
-                                            type="tel"
-                                            id="phone"
-                                            name="phone"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            disabled={status === 'loading'}
-                                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:bg-gray-50 disabled:cursor-not-allowed"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <label htmlFor="message" className="mb-2 block text-sm font-medium text-gray-700">
-                                            Messaggio *
-                                        </label>
-                                        <textarea
-                                            id="message"
-                                            name="message"
-                                            rows={6}
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            required
-                                            disabled={status === 'loading'}
-                                            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:bg-gray-50 disabled:cursor-not-allowed"
-                                        />
-                                    </div>
-
-                                    {/* Cloudflare Turnstile CAPTCHA */}
-                                    <div className="flex justify-center">
-                                        <Turnstile
-                                            siteKey={process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'}
-                                            onSuccess={(token) => setCaptchaToken(token)}
-                                            onError={() => setCaptchaToken(null)}
-                                            onExpire={() => setCaptchaToken(null)}
-                                        />
-                                    </div>
-
-                                    <Button
-                                        type="submit"
-                                        size="lg"
-                                        className="w-full rounded-full"
-                                        disabled={status === 'loading'}
-                                    >
-                                        {status === 'loading' ? 'Invio in corso...' : 'Invia messaggio'}
-                                    </Button>
-                                </form>
+                                <iframe
+                                    src="https://api.leadconnectorhq.com/widget/form/UMuYDb5YtJ0wQfbrTPcP"
+                                    style={{ width: '100%', height: '800px', border: 'none', borderRadius: '14px' }}
+                                    id="inline-UMuYDb5YtJ0wQfbrTPcP"
+                                    data-layout="{'id':'INLINE'}"
+                                    data-trigger-type="alwaysShow"
+                                    data-trigger-value=""
+                                    data-activation-type="alwaysActivated"
+                                    data-activation-value=""
+                                    data-deactivation-type="neverDeactivate"
+                                    data-deactivation-value=""
+                                    data-form-name="Discover new Marketing Strategies"
+                                    data-height="800"
+                                    data-layout-iframe-id="inline-UMuYDb5YtJ0wQfbrTPcP"
+                                    data-form-id="UMuYDb5YtJ0wQfbrTPcP"
+                                    title="Discover new Marketing Strategies"
+                                />
                             </div>
                         </div>
                     </div>
@@ -296,6 +158,8 @@ export default function ContactPage() {
                 </Section>
             </main>
             <Footer />
+            {/* GoHighLevel Form Script */}
+            <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
         </div>
     );
 }
