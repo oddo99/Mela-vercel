@@ -66,68 +66,75 @@ body {
 }
 
 /* iubenda Banner Custom Styles */
-.iubenda-cs-container {
+
+/* Banner container */
+.tb-banner-wrapper {
+  background-color: #0B223A !important;
+  border-radius: 16px !important;
+  max-width: 600px !important;
   font-family: var(--font-exo-2), sans-serif !important;
-  font-size: 13px !important;
 }
 
-/* Banner background */
-#iubenda-cs-banner .iubenda-cs-container,
-.tb-banner-wrapper,
-.iubenda-cs-content {
+/* Banner content area */
+.tb-banner-content,
+.tb-banner-body,
+#cmp-cs-paragraph {
   background-color: #0B223A !important;
   color: #ffffff !important;
 }
 
+/* Top stripe - gold gradient */
+.tb-banner-top-stripe {
+  background: linear-gradient(to right, #FFD700, #FFC700) !important;
+  height: 4px !important;
+}
+
+/* Footer section */
+.tb-banner-footer-wrapper {
+  background-color: #0B223A !important;
+}
+
 /* Accept button - Gold */
-.iubenda-cs-accept-btn,
-#iubenda-cs-banner .iubenda-cs-accept-btn,
-.tb-btn-accept {
+.tb-banner-footer-wrapper button[class*="accept"],
+button[class*="tb-btn-accept"],
+.iub-btn-accept {
   background-color: #FFD700 !important;
   color: #0B223A !important;
   border: none !important;
   border-radius: 9999px !important;
   font-weight: 600 !important;
-  padding: 10px 24px !important;
 }
 
-.iubenda-cs-accept-btn:hover,
-.tb-btn-accept:hover {
-  background-color: #FFC700 !important;
+/* Pills/Tags section */
+.tb-pills-section {
+  background-color: #0B223A !important;
 }
 
-/* Customize/Reject buttons */
-.iubenda-cs-customize-btn,
-.iubenda-cs-reject-btn,
-.tb-btn-customize,
-.tb-btn-reject {
-  background-color: transparent !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+.tb-pills-section button,
+.tb-pills-section span {
+  background-color: rgba(255, 215, 0, 0.2) !important;
+  color: #FFD700 !important;
+  border: 1px solid #FFD700 !important;
   border-radius: 9999px !important;
-  padding: 10px 24px !important;
-}
-
-.iubenda-cs-customize-btn:hover,
-.iubenda-cs-reject-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Make banner smaller */
-#iubenda-cs-banner {
-  max-width: 500px !important;
-  margin: 0 auto 20px auto !important;
-  border-radius: 16px !important;
-  overflow: hidden !important;
 }
 
 /* Links */
-.iubenda-cs-content a {
+.tb-banner-body a,
+.tb-banner-content a {
   color: #FFD700 !important;
 }
 
-/* Top stripe */
-.tb-banner-top-stripe {
-  background: linear-gradient(to right, #FFD700, #FFC700) !important;
-  height: 3px !important;
+/* Close button */
+.tb-banner-wrapper button[class*="close"] {
+  color: #ffffff !important;
+}
+
+/* Tabs */
+.tb-banner-wrapper [class*="tab"] {
+  color: #ffffff !important;
+}
+
+.tb-banner-wrapper [class*="tab"]:hover,
+.tb-banner-wrapper [class*="tab"][class*="active"] {
+  color: #FFD700 !important;
 }
