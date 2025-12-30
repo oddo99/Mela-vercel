@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 declare global {
@@ -12,30 +12,51 @@ declare global {
 export function GTMPageView() {
     const pathname = usePathname();
     const searchParams = useSearchParams();
+    const scrollThresholds = useRef<Set<number>>(new Set());
+
+    const handleScroll = useCallback(() => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
+
+        const thresholds = [25, 50, 75, 90];
+
+        thresholds.forEach((threshold) => {
+            if (scrollPercent >= threshold && !scrollThresholds.current.has(threshold)) {
+                scrollThresholds.current.add(threshold);
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'scroll_depth',
+                    scroll_threshold: threshold,
+                    page: pathname
+                });
+            }
+        });
+    }, [pathname]);
 
     useEffect(() => {
         if (pathname) {
             const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
 
-            // Push history change event - this creates a new "container" in GTM Preview
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                event: 'gtm.historyChange-v2',
-                'gtm.historyChangeSource': 'pushState',
-                'gtm.oldUrl': document.referrer || window.location.href,
-                'gtm.newUrl': window.location.origin + url,
-                'gtm.oldUrlFragment': '',
-                'gtm.newUrlFragment': ''
-            });
+            // Reset scroll thresholds for new page
+            scrollThresholds.current = new Set();
 
-            // Also push a custom pageview event for your triggers
+            // Push pageview event
+            window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 event: 'pageview',
                 page: pathname,
                 url: url
             });
+
+            // Add scroll listener
+            window.addEventListener('scroll', handleScroll);
+
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
         }
-    }, [pathname, searchParams]);
+    }, [pathname, searchParams, handleScroll]);
 
     return null;
 }

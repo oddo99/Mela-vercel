@@ -30,37 +30,13 @@
                 "accountId": "6214207842",
                 "containerId": "194766019",
                 "tagId": "2",
-                "name": "Debug - SPA Pageview",
+                "name": "Debug - All Clicks",
                 "type": "html",
                 "parameter": [
                     {
                         "type": "TEMPLATE",
                         "key": "html",
-                        "value": "<script>console.log('GTM SPA Pageview');</script>"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "supportDocumentWrite",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1735525000001",
-                "firingTriggerId": [
-                    "100"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT"
-            },
-            {
-                "accountId": "6214207842",
-                "containerId": "194766019",
-                "tagId": "3",
-                "name": "Debug - Click",
-                "type": "html",
-                "parameter": [
-                    {
-                        "type": "TEMPLATE",
-                        "key": "html",
-                        "value": "<script>console.log('GTM Click');</script>"
+                        "value": "<script>console.log('GTM Click:', '{{Click Text}}', '{{Click Classes}}', '{{Click URL}}');</script>"
                     },
                     {
                         "type": "BOOLEAN",
@@ -73,34 +49,33 @@
                     "101"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT"
-            }
-        ],
-        "trigger": [
+            },
             {
                 "accountId": "6214207842",
                 "containerId": "194766019",
-                "triggerId": "100",
-                "name": "Custom Event - pageview",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
+                "tagId": "3",
+                "name": "Debug - Scroll Depth",
+                "type": "html",
+                "parameter": [
                     {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "pageview"
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>console.log('GTM Scroll:', '{{Scroll Depth Threshold}}%', '{{Page Path}}');</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
                     }
                 ],
-                "fingerprint": "1735525000100"
-            },
+                "fingerprint": "1735525000003",
+                "firingTriggerId": [
+                    "102"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            }
+        ],
+        "trigger": [
             {
                 "accountId": "6214207842",
                 "containerId": "194766019",
@@ -108,6 +83,31 @@
                 "name": "Click - All Elements",
                 "type": "CLICK",
                 "fingerprint": "1735525000101"
+            },
+            {
+                "accountId": "6214207842",
+                "containerId": "194766019",
+                "triggerId": "102",
+                "name": "Scroll Depth - 25 50 75 90",
+                "type": "SCROLL_DEPTH",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "verticalThresholdsOn",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "verticalThresholdUnits",
+                        "value": "PERCENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "verticalThresholds",
+                        "value": "25, 50, 75, 90"
+                    }
+                ],
+                "fingerprint": "1735525000102"
             }
         ],
         "fingerprint": "1735525000000"
