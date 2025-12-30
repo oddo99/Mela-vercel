@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 interface CaseStudy {
@@ -83,10 +84,11 @@ export const CaseStudyMap = () => {
             >
                 {/* World Map Background */}
                 <div className="absolute inset-0 rounded-2xl overflow-hidden bg-white border border-slate-100">
-                    <img
+                    <Image
                         src="/images/world-map.png"
                         alt="World Map"
-                        className="w-full h-full object-cover opacity-90 brightness-100 contrast-125 saturate-0"
+                        fill
+                        className="object-cover opacity-90 brightness-100 contrast-125 saturate-0"
                     />
                 </div>
 

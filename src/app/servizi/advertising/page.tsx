@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
@@ -6,6 +7,15 @@ import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Megaphone, Search, ShoppingCart, Globe, Palette, RefreshCw, PieChart, TrendingUp, ArrowRight } from "lucide-react";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "Advertising",
+    description: "Campagne pubblicitarie ad alte prestazioni su Amazon, Google, Meta e TikTok. Strategia, creatività e ottimizzazione continua per massimizzare il ROI.",
+    openGraph: {
+        title: "Advertising | Mela Services",
+        description: "Campagne data-driven per aumentare visibilità, vendite e redditività.",
+    },
+};
 
 export default function AdvertisingPage() {
     const steps = [

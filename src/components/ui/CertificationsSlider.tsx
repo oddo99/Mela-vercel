@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const certifications = [
     {
@@ -63,9 +64,11 @@ export const CertificationsSlider = () => {
                                 key={`set1-${index}`}
                                 className="flex h-32 w-48 flex-shrink-0 items-center justify-center self-center"
                             >
-                                <img
+                                <Image
                                     src={cert.url}
                                     alt={cert.name}
+                                    width={150}
+                                    height={150}
                                     className="max-h-full max-w-full object-contain"
                                 />
                             </div>
@@ -79,9 +82,11 @@ export const CertificationsSlider = () => {
                                 key={`set2-${index}`}
                                 className="flex h-32 w-48 flex-shrink-0 items-center justify-center self-center"
                             >
-                                <img
+                                <Image
                                     src={cert.url}
                                     alt={cert.name}
+                                    width={150}
+                                    height={150}
                                     className="max-h-full max-w-full object-contain"
                                 />
                             </div>

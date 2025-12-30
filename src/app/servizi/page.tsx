@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
@@ -5,6 +6,15 @@ import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import Link from "next/link";
 import { ShoppingBag, Globe, Users, BarChart3, ArrowRight, MapPin, Search, Link as LinkIcon, Mail, PenTool, FileText, Smartphone, PieChart } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "I Nostri Servizi",
+    description: "Scopri i servizi Mela: Marketplace, E-commerce, Lead Generation, Advertising, SEO e Content Strategy per far crescere il tuo business online.",
+    openGraph: {
+        title: "I Nostri Servizi | Mela Services",
+        description: "Soluzioni digitali complete per ogni fase della tua crescita: Marketplace, E-commerce, Leads e Advertising.",
+    },
+};
 
 export default function ServicesPage() {
     const coreServices = [

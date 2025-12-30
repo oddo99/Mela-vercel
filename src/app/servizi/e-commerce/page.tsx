@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
@@ -6,6 +7,15 @@ import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ShoppingBag, Globe, Zap, Search, Layout, Megaphone, TrendingUp, ArrowRight } from "lucide-react";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "E-commerce",
+    description: "Sviluppo e gestione e-commerce: consulenza, strategia, ottimizzazione SEO, advertising e lanci prodotto per il tuo store online.",
+    openGraph: {
+        title: "E-commerce | Mela Services",
+        description: "Dalla consulenza al lancio: tutto per far crescere il tuo negozio online.",
+    },
+};
 
 export default function EcommercePage() {
     const services = [

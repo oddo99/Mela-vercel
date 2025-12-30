@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
@@ -6,6 +7,15 @@ import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Users, Magnet, Filter, Mail, BarChart2, TrendingUp, ArrowRight, Target } from "lucide-react";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "Lead Generation",
+    description: "Genera contatti qualificati con strategie multicanale: funnel, landing page, campagne Meta/Google Ads e automazioni per massimizzare le conversioni.",
+    openGraph: {
+        title: "Lead Generation | Mela Services",
+        description: "Sistemi avanzati per acquisire lead qualificati e far crescere il tuo business.",
+    },
+};
 
 export default function LeadsPage() {
     const steps = [

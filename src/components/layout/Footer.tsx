@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Mail, Phone, Facebook, Instagram, Linkedin, ArrowRight, ExternalLink } from 'lucide-react';
 
 export const Footer = () => {
@@ -28,9 +29,11 @@ export const Footer = () => {
                                 {/* Sun/Glow Effect starting from Logo */}
                                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#FFD700]/10 blur-[90px] rounded-full -z-10 pointer-events-none" />
 
-                                <img
+                                <Image
                                     src="/images/logo-mela.png"
                                     alt="Mela Services"
+                                    width={160}
+                                    height={50}
                                     className="h-12 md:h-14 lg:h-16 w-auto brightness-0 invert opacity-90 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 -z-10 bg-[#FFD700]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

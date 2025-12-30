@@ -1,9 +1,19 @@
 import React from "react";
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Building2, Users, Calendar, Target, Award, TrendingUp } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "Chi Siamo",
+    description: "Scopri Mela Services: dal 2014 aiutiamo aziende e imprenditori a crescere nel mondo digitale con strategie di marketing e e-commerce.",
+    openGraph: {
+        title: "Chi Siamo | Mela Services",
+        description: "Dal 2014, un team di esperti di marketing e pubblicità specializzati su diverse piattaforme e-commerce.",
+    },
+};
 
 export default function AboutPage() {
     const stats = [

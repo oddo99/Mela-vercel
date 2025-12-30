@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { Menu, X, ChevronDown, ArrowRight, Sparkles } from 'lucide-react';
 
@@ -61,9 +62,12 @@ export const Navbar = ({ variant = 'light' }: NavbarProps) => {
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="relative">
-                        <img
+                        <Image
                             src="/images/logo-mela.png"
                             alt="Mela Services"
+                            width={180}
+                            height={60}
+                            priority
                             className="h-14 md:h-16 lg:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
                         />
                         {/* Glow effect on hover */}

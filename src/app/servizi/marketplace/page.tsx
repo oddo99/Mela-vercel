@@ -1,11 +1,37 @@
 import React from "react";
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { FAQPageSchema } from "@/components/seo/JsonLd";
 import { Calculator, User, FileText, Camera, Rocket, ArrowRight } from "lucide-react";
 import Link from "next/link";
+
+const faqs = [
+    {
+        question: "Quanto costa vendere su Amazon?",
+        answer: "I costi dipendono dal modello scelto (Seller o Vendor), dalle commissioni di vendita (6-20% a seconda della categoria) e dai costi logistici. Forniamo un'analisi costi-ricavi dettagliata prima di iniziare."
+    },
+    {
+        question: "Quanto tempo serve per iniziare a vendere su un marketplace?",
+        answer: "Con il nostro supporto, l'onboarding completo richiede circa 2-4 settimane, inclusa la creazione dell'account, l'ottimizzazione dei listing e la configurazione della logistica."
+    },
+    {
+        question: "Gestite anche il lancio internazionale?",
+        answer: "Sì, offriamo strategie complete per l'espansione su marketplace europei e globali, gestendo traduzioni, logistica internazionale e campagne pubblicitarie localizzate."
+    },
+];
+
+export const metadata: Metadata = {
+    title: "Marketplace",
+    description: "Consulenze marketplace Amazon e altri canali. Strategia, gestione account, ottimizzazione listing e lancio internazionale per il tuo business.",
+    openGraph: {
+        title: "Marketplace | Mela Services",
+        description: "Strategie complete per vendere su Amazon e marketplace internazionali.",
+    },
+};
 
 export default function MarketplacePage() {
     const steps = [
@@ -46,6 +72,7 @@ export default function MarketplacePage() {
 
     return (
         <div className="min-h-screen bg-[#0B223A] font-sans text-white overflow-x-hidden">
+            <FAQPageSchema faqs={faqs} />
             <Navbar />
             <main>
                 {/* Hero Section */}

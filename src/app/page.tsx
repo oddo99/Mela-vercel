@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
@@ -180,10 +181,11 @@ export default function HomePage() {
                 </div>
               </FadeIn>
               <FadeIn direction="left" className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src="/images/generated/office-team.png"
                   alt="Mela Services Team"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B223A]/80 via-transparent to-transparent flex items-end p-10">
                   <span className="text-white/90 text-2xl font-bold">Il tuo partner per la crescita digitale</span>
