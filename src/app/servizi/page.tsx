@@ -266,7 +266,7 @@ export default function ServicesPage() {
                                         </div>
 
                                         {/* Content */}
-                                        <div className="absolute inset-0 flex flex-col justify-end p-6">
+                                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
                                             <h3 className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors mb-2">Life120</h3>
                                             <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Strategia omnicanale per massimizzare la visibilità</p>
                                         </div>
@@ -289,7 +289,7 @@ export default function ServicesPage() {
                                             </span>
                                         </div>
 
-                                        <div className="absolute inset-0 flex flex-col justify-end p-6">
+                                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
                                             <h3 className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors mb-2">Naturwaren</h3>
                                             <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Prodotti naturali e cosmetici biologici</p>
                                         </div>
@@ -311,7 +311,7 @@ export default function ServicesPage() {
                                             </span>
                                         </div>
 
-                                        <div className="absolute inset-0 flex flex-col justify-end p-6">
+                                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
                                             <h3 className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors mb-2">Dermomamma</h3>
                                             <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Strategia multicanale integrata Amazon e TikTok</p>
                                         </div>
