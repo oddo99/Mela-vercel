@@ -104,28 +104,51 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
-                            {/* Contact Form - GoHighLevel Embed */}
-                            <div className="relative w-full max-w-sm mx-auto lg:mx-0 overflow-hidden" style={{ height: '725px' }}>
+                            {/* Map Section */}
+                            <div className="h-[400px] w-full overflow-hidden rounded-3xl border border-gray-100 shadow-lg lg:h-auto">
                                 <iframe
-                                    src="https://api.leadconnectorhq.com/widget/form/UMuYDb5YtJ0wQfbrTPcP"
-                                    style={{ width: '100%', height: '850px', border: 'none', overflow: 'hidden' }}
-                                    className="no-scroll"
-                                    scrolling="no"
-                                    id="inline-UMuYDb5YtJ0wQfbrTPcP"
-                                    data-layout="{'id':'INLINE'}"
-                                    data-trigger-type="alwaysShow"
-                                    data-trigger-value=""
-                                    data-activation-type="alwaysActivated"
-                                    data-activation-value=""
-                                    data-deactivation-type="neverDeactivate"
-                                    data-deactivation-value=""
-                                    data-form-name="Discover new Marketing Strategies"
-                                    data-height="850"
-                                    data-layout-iframe-id="inline-UMuYDb5YtJ0wQfbrTPcP"
-                                    data-form-id="UMuYDb5YtJ0wQfbrTPcP"
-                                    title="Discover new Marketing Strategies"
+                                    src="https://maps.google.com/maps?q=Corso%20Dante%20118%2C%2010126%20Torino%20TO&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
                                 />
                             </div>
+                        </div>
+                    </div>
+                </Section>
+
+                {/* Contact Form Section */}
+                <Section className="bg-gray-50 py-20 lg:py-28">
+                    <div className="container">
+                        <div className="mx-auto max-w-2xl text-center mb-12">
+                            <h2 className="text-3xl font-bold text-gray-900 mb-4">Inviaci un messaggio</h2>
+                            <p className="text-gray-600">Compila il modulo sottostante e ti ricontatteremo al più presto.</p>
+                        </div>
+
+                        {/* Contact Form - GoHighLevel Embed */}
+                        <div className="relative w-full max-w-sm mx-auto overflow-hidden" style={{ height: '725px' }}>
+                            <iframe
+                                src="https://api.leadconnectorhq.com/widget/form/UMuYDb5YtJ0wQfbrTPcP"
+                                style={{ width: '100%', height: '800px', border: 'none', overflow: 'hidden' }}
+                                className="no-scroll"
+                                scrolling="no"
+                                id="inline-UMuYDb5YtJ0wQfbrTPcP"
+                                data-layout="{'id':'INLINE'}"
+                                data-trigger-type="alwaysShow"
+                                data-trigger-value=""
+                                data-activation-type="alwaysActivated"
+                                data-activation-value=""
+                                data-deactivation-type="neverDeactivate"
+                                data-deactivation-value=""
+                                data-form-name="Discover new Marketing Strategies"
+                                data-height="800"
+                                data-layout-iframe-id="inline-UMuYDb5YtJ0wQfbrTPcP"
+                                data-form-id="UMuYDb5YtJ0wQfbrTPcP"
+                                title="Discover new Marketing Strategies"
+                            />
                         </div>
                     </div>
                 </Section>
