@@ -128,24 +128,12 @@ export default function ContactPage() {
                             <p className="text-gray-600">Compila il modulo sottostante e ti ricontatteremo al più presto.</p>
                         </div>
 
-                        {/* Contact Form - GoHighLevel Standard Embed */}
-                        <iframe
-                            src="https://api.leadconnectorhq.com/widget/form/UMuYDb5YtJ0wQfbrTPcP"
-                            style={{ width: '100%', height: '100%', border: 'none', borderRadius: '4px' }}
-                            id="inline-UMuYDb5YtJ0wQfbrTPcP"
-                            data-layout="{'id':'INLINE'}"
-                            data-trigger-type="alwaysShow"
-                            data-trigger-value=""
-                            data-activation-type="alwaysActivated"
-                            data-activation-value=""
-                            data-deactivation-type="neverDeactivate"
-                            data-deactivation-value=""
-                            data-form-name="Discover new Marketing Strategies"
-                            data-height="auto"
-                            data-layout-iframe-id="inline-UMuYDb5YtJ0wQfbrTPcP"
-                            data-form-id="UMuYDb5YtJ0wQfbrTPcP"
-                            title="Discover new Marketing Strategies"
-                        />
+                        {/* Contact Form Removed */}
+                        <div className="mx-auto text-center">
+                            <p className="text-gray-600">
+                                Per qualsiasi informazione, scrivici a <a href="mailto:info@mela.services" className="text-primary hover:underline">info@mela.services</a>
+                            </p>
+                        </div>
                     </div>
                 </Section>
 
@@ -177,8 +165,7 @@ export default function ContactPage() {
                 </Section>
             </main>
             <Footer />
-            {/* GoHighLevel Form Script */}
-            <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
+
         </div>
     );
 }
