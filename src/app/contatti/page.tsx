@@ -121,6 +121,34 @@ export default function ContactPage() {
                 </Section>
 
 
+                {/* Contact Form Section */}
+                <Section className="bg-gray-50 py-20 lg:py-28">
+                    <div className="container mx-auto px-4 md:px-6 max-w-[400px]">
+                        <div className="mx-auto text-center mb-12">
+                            <h2 className="text-3xl font-bold text-gray-900 mb-4">Inviaci un messaggio</h2>
+                            <p className="text-gray-600">Compila il modulo sottostante e ti ricontatteremo al più presto.</p>
+                        </div>
+
+                        {/* Contact Form - GoHighLevel Standard Embed */}
+                        <iframe
+                            src="https://api.leadconnectorhq.com/widget/form/UMuYDb5YtJ0wQfbrTPcP"
+                            style={{ width: '100%', height: '100%', border: 'none', borderRadius: '4px' }}
+                            id="inline-UMuYDb5YtJ0wQfbrTPcP"
+                            data-layout="{'id':'INLINE'}"
+                            data-trigger-type="alwaysShow"
+                            data-trigger-value=""
+                            data-activation-type="alwaysActivated"
+                            data-activation-value=""
+                            data-deactivation-type="neverDeactivate"
+                            data-deactivation-value=""
+                            data-form-name="Discover new Marketing Strategies"
+                            data-height="auto"
+                            data-layout-iframe-id="inline-UMuYDb5YtJ0wQfbrTPcP"
+                            data-form-id="UMuYDb5YtJ0wQfbrTPcP"
+                            title="Discover new Marketing Strategies"
+                        />
+                    </div>
+                </Section>
 
                 {/* Newsletter Section */}
                 <Section className="bg-gradient-to-br from-[#0B223A] to-[#1a3a5a] py-20 text-white lg:py-28">
@@ -150,7 +178,8 @@ export default function ContactPage() {
                 </Section>
             </main>
             <Footer />
-
+            {/* GoHighLevel Form Script */}
+            <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
         </div>
     );
 }
