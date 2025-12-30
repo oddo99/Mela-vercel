@@ -120,22 +120,7 @@ export default function ContactPage() {
                     </div>
                 </Section>
 
-                {/* Contact Form Section */}
-                <Section className="bg-gray-50 py-20 lg:py-28">
-                    <div className="container mx-auto px-4 md:px-6 max-w-[400px]">
-                        <div className="mx-auto text-center mb-12">
-                            <h2 className="text-3xl font-bold text-gray-900 mb-4">Inviaci un messaggio</h2>
-                            <p className="text-gray-600">Compila il modulo sottostante e ti ricontatteremo al più presto.</p>
-                        </div>
 
-                        {/* Contact Form Removed */}
-                        <div className="mx-auto text-center">
-                            <p className="text-gray-600">
-                                Per qualsiasi informazione, scrivici a <a href="mailto:info@mela.services" className="text-primary hover:underline">info@mela.services</a>
-                            </p>
-                        </div>
-                    </div>
-                </Section>
 
                 {/* Newsletter Section */}
                 <Section className="bg-gradient-to-br from-[#0B223A] to-[#1a3a5a] py-20 text-white lg:py-28">
