@@ -202,16 +202,31 @@ export const Footer = () => {
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-6">
-                        {['Privacy Policy', 'Termini e Condizioni', 'Cookie Policy'].map((item) => (
-                            <Link
-                                key={item}
-                                href={`/${item.toLowerCase().replace(/ /g, '-')}`}
-                                className="text-sm text-white/40 hover:text-[#FFD700] transition-colors relative group"
-                            >
-                                {item}
-                                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#FFD700] transition-all duration-300 group-hover:w-full" />
-                            </Link>
-                        ))}
+                        <a
+                            href="https://www.iubenda.com/privacy-policy/36360556"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-white/40 hover:text-[#FFD700] transition-colors relative group"
+                        >
+                            Privacy Policy
+                            <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#FFD700] transition-all duration-300 group-hover:w-full" />
+                        </a>
+                        <Link
+                            href="/termini-e-condizioni"
+                            className="text-sm text-white/40 hover:text-[#FFD700] transition-colors relative group"
+                        >
+                            Termini e Condizioni
+                            <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#FFD700] transition-all duration-300 group-hover:w-full" />
+                        </Link>
+                        <a
+                            href="https://www.iubenda.com/privacy-policy/36360556/cookie-policy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-white/40 hover:text-[#FFD700] transition-colors relative group"
+                        >
+                            Cookie Policy
+                            <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#FFD700] transition-all duration-300 group-hover:w-full" />
+                        </a>
                     </div>
                 </div>
             </div>
