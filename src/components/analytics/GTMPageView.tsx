@@ -75,10 +75,25 @@ export function GTMPageView() {
         if (pathname) {
             scrollThresholds.current = new Set();
 
+            // Build full URL
+            const url = searchParams?.toString()
+                ? `${pathname}?${searchParams.toString()}`
+                : pathname;
+
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 event: 'custom_pageview',
                 page_path: pathname,
+                page_location: window.location.href,
+                page_title: document.title,
+                page_referrer: document.referrer || ''
+            });
+
+            // Also push a GA4-compatible page_view event
+            window.dataLayer.push({
+                event: 'page_view',
+                page_path: pathname,
+                page_location: window.location.href,
                 page_title: document.title
             });
 
